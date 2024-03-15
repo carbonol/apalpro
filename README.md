@@ -48,7 +48,7 @@ Como mínimo, se requieren las siguientes dependencias desde Maven, las cuales d
 
 1. [MySQL Connector Java](https://mvnrepository.com/artifact/mysql/mysql-connector-java "MySQL Connector Java"): versión 8.0.32
 2. [Gson](https://mvnrepository.com/artifact/com.google.code.gson/gson "Gson"): versión 2.10.1
-3. [Jakarta EE Platform API](https://mvnrepository.com/artifact/jakarta.platform/jakarta.jakartaee-api/10.0.0 "Jakarta EE Platform API"): versión [10.0.0](https://mvnrepository.com/artifact/jakarta.platform/jakarta.jakartaee-api/10.0.0 "10.0.0")
+3. [Jakarta EE Platform API](https://mvnrepository.com/artifact/jakarta.platform/jakarta.jakartaee-api "Jakarta EE Platform API"): versión [10.0.0](https://mvnrepository.com/artifact/jakarta.platform/jakarta.jakartaee-api/10.0.0 "10.0.0")
 
 ### Frontend: Angular
 
@@ -63,35 +63,35 @@ Como mínimo, se requieren las siguientes dependencias desde Maven, las cuales d
 ## Documentación relacionada con el stack tecnológico del software, incluyendo lenguajes de programación y demás herramientas relevantes
 
 **Netbeans y Java**
-https://netbeans.apache.org/help/index.html
-https://docs.oracle.com/en/java/javase/16/
-https://docs.oracle.com/en/java/javase/17/
+- https://netbeans.apache.org/help/index.html
+- https://docs.oracle.com/en/java/javase/16/
+- https://docs.oracle.com/en/java/javase/17/
 
 **Python**
-https://docs.python.org/3/
+- https://docs.python.org/3/
 
 **MySQL**
-https://dev.mysql.com/doc/
+- https://dev.mysql.com/doc/
 
 **DBeaver**
-https://github.com/dbeaver/dbeaver/wiki
+- https://github.com/dbeaver/dbeaver/wiki
 
 **NodeJS y npm**
-https://nodejs.org/dist/latest-v18.x/docs/api/
-https://docs.npmjs.com/
+- https://nodejs.org/dist/latest-v18.x/docs/api/
+- https://docs.npmjs.com/
 
 **Servidor Payara**
-https://www.payara.fish/
-https://docs.payara.fish/
-https://docs.payara.fish/community/docs/Release%20Notes/Release%20Notes%206.2023.1.html
+- https://www.payara.fish/
+- https://docs.payara.fish/
+- https://docs.payara.fish/community/docs/Release%20Notes/Release%20Notes%206.2023.1.html
 
 **Angular y Angular CLI**
-https://angular.io/
-https://angular.io/cli
-https://angular.io/docs
-https://angular.io/resources?category=community
-https://blog.angular.io/?gi=c3d792913b37
-https://angular.io/guide/setup-local
+- https://angular.io/
+- https://angular.io/cli
+- https://angular.io/docs
+- https://angular.io/resources?category=community
+- https://blog.angular.io/?gi=c3d792913b37
+- https://angular.io/guide/setup-local
 
 ## Cómo usar este proyecto
 
@@ -99,19 +99,20 @@ Para usar y probar este proyecto, se requiere crear la base de datos e iniciar e
 
 ### Rutas de prueba de funcionamiento del servidor
 
-http://localhost:8080/
-http://localhost:8080/apalpro/
+- http://localhost:8080/
+- http://localhost:8080/apalpro/
 
 ### Funcionalidades implementadas
 
-1) Obtener la información en la base de datos sobre los roles de usuario
-1. GET localhost:8080/apalpro/resources/roles/get/all
-2. GET localhost:8080/apalpro/resources/roles/{id}/get
-    1. Ejemplo: GET localhost:8080/apalpro/resources/roles/1/get
-    
-2) Crear 1 usuario con rol de profesor
-POST localhost:8080/apalpro/resources/users/create
-**Body: raw: JSON (Postman)** 
+1\. Obtener la información en la base de datos sobre los roles de usuario
+- GET localhost:8080/apalpro/resources/roles/get/all
+- GET localhost:8080/apalpro/resources/roles/{id}/get
+    - Ejemplo: GET localhost:8080/apalpro/resources/roles/1/get
+
+2\. Crear 1 usuario con rol de profesor
+- POST localhost:8080/apalpro/resources/users/create
+- **Body: raw: JSON (Postman)**
+
 ````
     {
         "uname":"maurelio",
@@ -121,9 +122,11 @@ POST localhost:8080/apalpro/resources/users/create
         "role_id":2
     }
 ````
-3) Crear 1 usuario con rol de estudiante
-POST localhost:8080/apalpro/resources/users/create
-**Body: raw: JSON (Postman)**
+3\. Crear 1 usuario con rol de estudiante
+
+- POST localhost:8080/apalpro/resources/users/create
+- **Body: raw: JSON (Postman)**
+
 ````
 {
     "uname":"lniebles",
@@ -134,9 +137,11 @@ POST localhost:8080/apalpro/resources/users/create
 }
 ````
 
-4) Crear 1 ejercicio de programación (en el lenguaje Python 3) con sus respectivos casos de prueba
-POST localhost:8080/apalpro/resources/exercises/create/withTestCases
-**Body: raw: JSON (Postman)**
+4\. Crear 1 ejercicio de programación (en el lenguaje Python 3) con sus respectivos casos de prueba
+
+- POST localhost:8080/apalpro/resources/exercises/create/withTestCases
+- **Body: raw: JSON (Postman)**
+
 ````
 {
     "name":"Suma de dos números enteros",
@@ -163,13 +168,14 @@ POST localhost:8080/apalpro/resources/exercises/create/withTestCases
 }
 ````
 
-5) Permitir a un usuario (estudiante) ver los datos de un ejercicio, según su id, sólo con los casos de prueba visibles.
-1. GET localhost:8080/apalpro/resources/exercises/{id}/get/withVisibleTestCases
-    1. Ejemplo: GET localhost:8080/apalpro/resources/exercises/3/get/withVisibleTestCases
+5\. Permitir a un usuario (estudiante) ver los datos de un ejercicio, según su id, sólo con los casos de prueba visibles.
+- GET localhost:8080/apalpro/resources/exercises/{id}/get/withVisibleTestCases
+    - Ejemplo: GET localhost:8080/apalpro/resources/exercises/3/get/withVisibleTestCases
 
-### Pendientes por desarrollar y probar - En desarrollo:
+### Algunas pruebas pendientes por desarrollar
 1) Crear (registrar) 1 propuesta de solución para un problema, que no cumpla con al menos un caso de prueba y almacenar los datos de la evaluación de la misma.
 2) Crear (registrar) 1 propuesta de solución para un problema, que sí cumpla con al menos un caso de prueba y almacenar los datos de la evaluación de la misma.
+3) Otras operaciones CRUD no desarrolladas aún.
 
 ## Licencia
 
