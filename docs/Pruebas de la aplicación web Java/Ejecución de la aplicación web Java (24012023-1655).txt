@@ -1,0 +1,61 @@
+Launching Payara Server on Felix platform
+ene. 24, 2023 4:51:27 P. M. com.sun.enterprise.glassfish.bootstrap.osgi.BundleProvisioner createBundleProvisioner
+INFO: Create bundle provisioner class = class com.sun.enterprise.glassfish.bootstrap.osgi.BundleProvisioner.
+Registered com.sun.enterprise.glassfish.bootstrap.osgi.EmbeddedOSGiGlassFishRuntime@128e427f in service registry.
+#!## LogManagerService.postConstruct : rootFolder=C:\Users\leand\Payara_Server\glassfish
+#!## LogManagerService.postConstruct : templateDir=C:\Users\leand\Payara_Server\glassfish\lib\templates
+#!## LogManagerService.postConstruct : src=C:\Users\leand\Payara_Server\glassfish\lib\templates\logging.properties
+#!## LogManagerService.postConstruct : dest=C:\Users\leand\Payara_Server\glassfish\domains\domain1\config\logging.properties
+INFO:   Running Payara Version: Payara Server  6 #badassfish (build 883)
+INFO:   Server log file is using Formatter class: com.sun.enterprise.server.logging.ODLLogFormatter
+INFO:   HV000001: Hibernate Validator 8.0.0.Final
+INFO:   Registered fish.payara.ha.hazelcast.store.HazelcastBackingStoreFactoryProxy for persistence-type = hazelcast in BackingStoreFactoryRegistry
+INFO:   Hazelcast Instance Bound to JNDI at payara/Hazelcast
+INFO:   JSR107 Caching Provider Bound to JNDI at payara/CachingProvider
+INFO:   JSR107 Default Cache Manager Bound to JNDI at payara/CacheManager
+INFO:   Network Listener http-listener-1 started in: 19ms - bound to [/0.0.0.0:8080]
+INFO:   Network Listener http-listener-2 started in: 8ms - bound to [/0.0.0.0:8181]
+INFO:   Network Listener admin-listener started in: 11ms - bound to [/0.0.0.0:4848]
+INFO:   Grizzly 4.0.0 started in: 13.763ms - bound to [http-listener-1:8080, http-listener-2:8181, admin-listener:4848]
+INFO:   Network Listener iiop-service started in: 7ms - bound to [/0.0.0.0:3700]
+INFO:   Payara Server  6 #badassfish (883) startup time : Felix (127.113ms), startup services(18.984ms), total(146.097ms)
+INFO:   Data Grid Status 
+Payara Data Grid State: DG Version: 5 DG Name: development DG Size: 1
+Instances: {
+ DataGrid: development Name: server Lite: false This: true UUID: a559a4b0-0f10-4d9e-b51b-ae0b7370495d Address: /169.254.123.148:4900
+}
+INFO:   Payara Notification Service bootstrapped.
+INFO:   Bootstrapping Monitoring Console Runtime
+INFO:   Starting monitoring data collection for server
+INFO:   Starting monitoring watch collection for server
+INFO:   Network Listener JMS_PROXY_default_JMS_host started in: 33ms - bound to [/0.0.0.0:7676]
+INFO:   JMXStartupService has started JMXConnector on JMXService URL service:jmx:rmi://0.0.0.0:8686/jndi/rmi://0.0.0.0:8686/jmxrmi
+INFO:   Skipping registration of inhabitant for service reference [org.osgi.service.metatype.MetaTypeProvider] as the service object could not be obtained.
+INFO:   Java security manager is disabled.
+INFO:   Entering Security Startup Service.
+INFO:   Loading policy provider fish.payara.security.jacc.provider.PolicyProviderImpl.
+INFO:   Security Service(s) started successfully.
+INFO:   Created HTTP listener http-listener-1 on host/port 0.0.0.0:8080
+INFO:   Created HTTP listener http-listener-2 on host/port 0.0.0.0:8181
+INFO:   Created HTTP listener admin-listener on host/port 0.0.0.0:4848
+INFO:   Created virtual server server
+INFO:   Created virtual server __asadmin
+INFO:   Virtual server server loaded default web module 
+WARNING:   The web application [unknown] registered the JDBC driver [com.mysql.cj.jdbc.Driver] but failed to unregister it when the web application was stopped. To prevent a memory leak, the JDBC Driver has been forcibly unregistered.
+INFO:   Loading application __admingui done in 8.721 ms
+INFO:   WELD-000900: 5.0.1 (Final)
+INFO:   Inicializando Mojarra 3.0.2 para el contexto ''
+INFO:   Clustered CDI Event bus initialized
+INFO:   Initializing Soteria 3.0.1.payara-p1 for context '/apalpro'
+INFO:   Loading application [__admingui] at [/]
+INFO:   Loading application [apalpro-1.0-SNAPSHOT] at [/apalpro]
+INFO:   apalpro-1.0-SNAPSHOT was successfully deployed in 10.048 milliseconds.
+INFO:   Context path from ServletContext:  differs from path from bundle: /
+INFO:   GlassFishORBFactory service initialized.
+INFO:   Cannot find the resource bundle for the name com.sun.logging.enterprise.system.container.ejb for class com.sun.ejb.containers.EjbAsyncInvocationManager using fish.payara.server.internal.ejb.ejb-container [81]
+INFO:   Cannot find the resource bundle for the name com.sun.logging.enterprise.system.container.ejb for class com.sun.ejb.base.io.EJBObjectOutputStreamHandler using fish.payara.server.internal.ejb.ejb-container [81]
+INFO:   Cannot find the resource bundle for the name com.sun.logging.enterprise.system.container.ejb for class org.glassfish.ejb.admin.cli.MigrateTimers using fish.payara.server.internal.ejb.ejb-container [81]
+INFO:   Listening to REST requests at context: /management/domain.
+INFO:   Listening to REST requests at context: /management/domain.
+INFO:   Listening to REST requests at context: /management/domain.
+INFO:   Listening to REST requests at context: /management/domain.

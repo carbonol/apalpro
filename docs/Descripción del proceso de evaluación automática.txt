@@ -1,0 +1,118 @@
+1 - Implementación de la funcionalidad de evaluación automática:
+a) Crear 1 usuario con rol de profesor => IMPLEMENTADO; RESTA PROBARLO EN POSTMAN.
+
+b) Crear 1 ejercicio con sus respectivos casos de prueba - Algunos casos de prueba serán visibles al estudiante, mientras que otros estarán ocultos. => IMPLEMENTADO; RESTA PROBARLO EN POSTMAN.
+b*) USUALMENTE, se debe autenticar que el usuario que haga esta petición sea un profesor, porque sólo un profesor puede crear ejercicios con casos de prueba. => POSPUESTO
+
+c) Crear 1 usuario con rol de estudiante => IMPLEMENTADO; RESTA PROBARLO EN POSTMAN.
+
+d) Ver los datos de un ejercicio, según id, sólo con los casos de prueba visibles. => IMPLEMENTADO; RESTA PROBARLO EN POSTMAN.
+(ALTERNATIVA DESCARTADA: Otra alternativa sería enviar los datos de un ejercicio con todos los casos de prueba, y que la aplicación cliente valide cuáles casos de prueba son visibles para el usuario - Esto ahorraría recursos de servidor para procesar evaluaciones porque ya no sería necesario obtener todos los casos de prueba desde el servidor, sino que esta información sería proporcionado por el cliente. Si no, habría que obtener dos veces los casos de prueba de la base de datos desde el servidor: Una petición para que el estudiante sólo vea los casos de prueba visibles, y otra, cuando se hace la evaluación, de todos los casos de prueba del ejercicio. Pero, esto podría hacer más insegura a la aplicación, en cuanto a que no se validarían si los casos de prueba dados por la aplicación cliente son los casos de prueba que realmente se deberían evaluar.)
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+PLAN A - NO CONVIENE IMPLEMENTAR ESTE PLAN.
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+e) Crear (registrar) 1 propuesta de solución (COMO ESTUDIANTE) para un problema, que no cumpla con al menos un caso de prueba y almacenar los datos de la evaluación de la misma.
+f) Crear (registrar) 1 propuesta de solución (COMO ESTUDIANTE) para un problema, que sí cumpla con al menos un caso de prueba y almacenar los datos de la evaluación de la misma.
+
+Tanto en e) como en f) es particularmente importante desarrollar la lógica del proceso de envío y evaluación de una propuesta de solución:
+
+Cuando el usuario (usualmente un estudiante) envía una propuesta de solución (en Python 3):
+I) Se toma el código escrito en Python 3, el id del usuario (sea estudiante, profesor o administrador) y el id del ejercicio para que estos datos sean procesados en la aplicación web => OK
+
+II) La aplicación web debe, entonces, ordenar la ejecución de un intérprete de Python 3 que evalúe la propuesta de solución (código) del usuario que envió el usuario por medio de la comprobación del cumplimiento de este código de todos los casos de prueba (entradas - salidas) descritos para el ejercicio. Esto implica:
+
+i) Asegurarse de que los datos de id de usuario y id de ejercicio existan. Si no, devuelva un mensaje al usuario diciendo que se requiere el id de usuario y el id de ejercicio para realizar la evaluación. NOTA: El código puede estar vacío (sin caracteres), y esto es válido (aunque la evaluación en este caso, muy seguramente, será desfavorable para el estudiante). => OK
+
+INCONVENIENTE DE ESTE PASO: SE DISEÑÓ EN BASE DE DATOS QUE LA PROPUESTA DE SOLUCIÓN NO PODÍA TENER UN ID DE RESULTADO DE EVALUACIÓN NULO...
+PODRÍA CAMBIARLO A QUE SE PERMITIESEN VALORES NULOS ALLÍ...
+ii) Crear el registro en base de datos de la propuesta de solución, ingresando el id del usuario y el código - El registro created_at muestra la fecha de cuándo se hizo esto. Asimismo, se debe referenciar el id de la propuesta de solución para algunos de los pasos posteriores de este proceso.
+
+<SE HARÁ UN PLAN B PARA ESTE PROCESO>
+
+iii) Internamente, obtener los datos de los casos de prueba que han sido asignados al ejercicio, con base en el id del ejercicio.
+iv) - Si se encontraron casos de prueba, crear el archivo .py correspondiente al código enviado por el estudiante en el servidor. 
+- Si no, devuelva un mensaje diciendo que no existen casos de prueba para el problema dado. => OK
+- PERO: Hay diferentes usuarios: Crear un directorio por usuario, y colocar el archivo .py en este directorio. (Nota: Sólo se debería hacer, máximo, 1 evaluación a la vez, por cliente, para evitar conflictos entre evaluación y evaluación).
+
+v) Ejecutar los n casos de prueba del ejercicio => Así que el programa .py se ejecutará n veces en el servidor, pero cada vez, con datos de entrada diferentes, según el caso de prueba a evaluar. PARA CADA CASO DE PRUEBA: Se deben obtener los datos de salida (texto) del programa .py. Luego, se van almacenando los datos de evaluación del caso de prueba en la base de datos: id de la propuesta de solución, id del caso de prueba, salida producida por el programa, y el resultado final de la evaluación, conforme a la comparación de los textos de salida esperada del caso de prueba y la salida que produjo el programa, el cual puede ser OK o NO OK.
+
+vi) Al finalizar la ejecución, elimine el archivo .py (y el directorio del usuario), y almacene el resultado final de evaluación de la solución propuesta en la base de datos, mirando los resultados OK y NO OK obtenidos en los casos de prueba: Si todos son OK, almacene OK; si no, almacene NO OK.
+
+vii) Si este proceso es exitoso, haga COMMIT en la base de datos; si hay una excepción (fallo) durante cualquier parte del proceso, y ya se ha almacenado información (temporalmente) en la base de datos, haga ROLLBACK para deshacer los cambios.
+
+NOTA: Debe configurarse un directorio, desde el servidor, en donde se irán procesando los archivos .py y evaluando los casos de prueba correspondientes.
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+PLAN B - FUNCIONALIDAD DE EVALUACIÓN AUTOMÁTICA DE PROPUESTAS DE SOLUCIÓN - PLAN VIGENTE
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+e) Crear (registrar) 1 propuesta de solución (COMO ESTUDIANTE) para un problema, que no cumpla con al menos un caso de prueba y almacenar los datos de la evaluación de la misma.
+f) Crear (registrar) 1 propuesta de solución (COMO ESTUDIANTE) para un problema, que sí cumpla con al menos un caso de prueba y almacenar los datos de la evaluación de la misma.
+
+Tanto en e) como en f) es particularmente importante desarrollar la lógica del proceso de envío y evaluación de una propuesta de solución:
+
+Cuando el usuario (usualmente un estudiante) envía una propuesta de solución (en Python 3):
+I) La aplicación web toma el código escrito en Python 3, el id del usuario (sea estudiante, profesor o administrador) y el id del ejercicio en formato JSON para que estos datos sean procesados en la aplicación web => OK
+
+II) La aplicación web debe, entonces, ordenar la ejecución de un intérprete de Python 3 que evalúe la propuesta de solución (código) del usuario que envió el usuario por medio de la comprobación del cumplimiento de este código de todos los casos de prueba (entradas - salidas) descritos para el ejercicio, y registrar los datos de evaluación y de propuesta de solución en la base de datos para que estos datos sean sujetos de análisis a futuro. Esto implica:
+
+1) Asegurarse de que los datos de id de usuario y id de ejercicio existan. Si no, devuelva un mensaje al usuario diciendo que se requiere el id de usuario y el id de ejercicio para realizar la evaluación. NOTA: El código puede estar vacío (sin caracteres), y esto es válido (aunque la evaluación en este caso, muy seguramente, será desfavorable para el estudiante). => OK
+
+2) Internamente, obtener los datos de los casos de prueba que han sido asignados al ejercicio, con base en el id del ejercicio.
+Si no hay casos de prueba, devuelva un mensaje diciendo que no existen casos de prueba para el problema dado. => OK
+
+Si se encontraron casos de prueba, entonces:
+
+3) Verificar que un directorio esté definido en el servidor para procesar archivos .py y evaluar los casos de prueba correspondientes (con estos archivos). => OK
+Si este directorio no existe, se debe crearlo. => OK
+Si este directorio existe, no se hace nada más al respecto. => OK
+
+Directorio para hacer evaluaciones automáticas
+----------------------------------------------
+C:\Users\leand\Documents\NetBeansProjects\apalpro\assessments
+
+4) Verificar que un directorio esté definido en el servidor para procesar los archivos .py QUE ENVÍE UN USUARIO EN PARTICULAR y evaluar los casos de prueba correspondientes (con estos archivos). Esto es IMPORTANTE porque existen diferentes usuarios en el sistema que interactúan en ella al mismo tiempo. => OK
+Por lo tanto, se debe crear un directorio por usuario, para después colocar el archivo .py a evaluar en este directorio. 
+Si este directorio no existe, se debe crearlo. => OK
+(Nota: Sólo se debería hacer, máximo, 1 evaluación a la vez, por cliente, para evitar conflictos entre evaluación y evaluación. Pero, ¿cómo verificar esto? ¡Ajá!).
+Si este directorio existe, se debe cancelar la evaluación, diciendo que ya hay una evaluación en proceso. => OK
+(Este directorio debería eliminarse una vez terminada la evaluación - Un usuario podría pedir esto también, para eliminar su propia carpeta...)
+
+Directorio de cada usuario para hacer evaluaciones automáticas
+--------------------------------------------------------------
+C:\Users\leand\Documents\NetBeansProjects\apalpro\assessments\<user_id>
+
+5) Crear el archivo .py correspondiente al código enviado por el estudiante en el servidor, en el directorio definido para ello. => OK
+
+6) Ejecutar los n casos de prueba del ejercicio:
+El programa .py se ejecutará n veces en el servidor, pero cada vez, con datos de entrada diferentes, según el caso de prueba a evaluar. 
+Es decir, para cada caso de prueba:
+
+7) Se deben tomar los datos de entrada (texto) del caso de prueba
+8) Se debe ejecutar el programa .py a evaluar con los datos de entrada (texto) del caso de prueba dado.
+9) Se deben obtener los datos de salida (texto) del programa .py. (**)
+10) Se deben almacenar (temporalmente), en la aplicación web, los datos de evaluación del caso de prueba (test_case_id) en el DTO de solution_proposals a ingresar DESPUÉS a la base de datos:
+id del caso de prueba, salida producida por el programa (output_data), y el resultado final de la evaluación (assessment_result_id), conforme a la comparación de los textos de salida esperada del caso de prueba y la salida que produjo el programa, el cual puede ser OK o NO OK.
+(El id de la propuesta de solución se incluirá después...)
+
+Al finalizar la ejecución de todos los casos de prueba...
+
+11) Elimine el archivo .py 
+12) Elimine el directorio DEL USUARIO
+13) Obtenga el resultado final de evaluación de la propuesta de solución (a agregar como assessment_result_id en la tabla solution_proposals), revisando la cantidad de resultados OK (1) y NO OK (2) obtenidos en los casos de prueba: Si todos son OK (1), almacene OK (1); si no, almacene NO OK (2).
+
+14) Almacene los datos de la propuesta de solución en la base de datos (user_id, code, assessment_result_id) - Aquí estará el resultado final de evaluación de la solución propuesta en la base de datos.
+15) Inmediatamente después, almacene los datos de las evaluaciones de cada caso de prueba aplicados a la propuesta de solución dada, en la base de datos (solution_proposal_id, test_case_id, output_data, assessment_result_id) - Esto incluye: id de la propuesta de solución, id del caso de prueba, salida producida por el programa, y el resultado final de la evaluación.
+
+16) Si este proceso es exitoso, haga COMMIT en la base de datos;
+
+E1) Si hay una excepción (fallo) en un momento en el que ya se creó el directorio de usuario para evaluar la solución, elimine el directorio (junto con el archivo .py incluido en él).
+NOTA: Esto debería indicarse explícitamente en la aplicación web...
+E2) Si hay una excepción (fallo) durante cualquier parte del proceso, y ya se ha almacenado información (temporalmente) en la base de datos, haga ROLLBACK para deshacer los cambios.
+
+5/16 + 0/2E
+
+Parcialmente: 2,6
+Completamente: 1,3,4,5,7

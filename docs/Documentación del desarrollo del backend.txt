@@ -1,0 +1,606 @@
+Desarrollo del backend
+----------------------
+
+Backend: Java
+IDE: Apache Netbeans 16
+
+https://docs.oracle.com/en/java/javase/16/
+https://netbeans.apache.org/help/index.html
+
+Para establecer conectividad y hacer operaciones en la base de datos a través de la aplicación web de Java
+----------------------------------------------------------------------------------------------------------
+https://dev.mysql.com/doc/
+
+Para realizar la evaluación de casos de prueba de programas hechos en Python 3 a través de la aplicación web de Java
+--------------------------------------------------------------------------------------------------------------------
+https://docs.python.org/3/
+
+Para probar las rutas de la aplicación web de Java
+--------------------------------------------------
+https://www.postman.com/
+
+Servidor Payara
+---------------
+https://www.payara.fish/
+https://docs.payara.fish/
+https://docs.payara.fish/community/docs/Release%20Notes/Release%20Notes%206.2023.1.html
+
+Release notes - Payara Platform Community 6.2023.1
+Supported APIs and Applications
+Jakarta EE 10
+Jakarta EE 10 Applications
+
+
+
+Creación del proyecto en Apache NetBeans 16
+-------------------------------------------
+Aunque usualmente se recomienda el uso de Spring Boot para realizar una aplicación web, no lo hago de esta forma porque no sé nada sobre este framework.
+Así que habrá que hacerlo sólo con Java; sin frameworks.
+
+IMPORTANTE: Es necesario descargar e instalar el JDK 17 (Que es de LTS) para poder usar Payara Server, el cual se escogió para la aplicación web.
+Por defecto, Apache NetBeans 16 sólo tiene el JDK 16 incluido.
+
+Instalación del Java SE Development Kit 17.0.6
+##############################################
+Next
+
+Install Java(TM) SE Development Kit 17.0.6 (64-bit) to:
+C:\Program Files\Java\jdk-17\
+
+Next
+
+Next Steps
+
+https://docs.oracle.com/en/java/javase/17/index.html
+
+Close
+
+Adopción del Java SE Development Kit 17.0.6 en NetBeans 16
+##########################################################
+NetBeans 16 >> Tools >> Java Platforms
+
+Add Platform...
+
+Java Standard Edition
+
+Next
+
+C:\Program Files\Java\jdk-17
+(Platform Folder)
+
+Platform Name: JDK 17
+
+Platform Sources: C:\Program Files\Java\jdk-17\lib\src.zip!/java.desktop/;C:\Program Files\Java\jdk-17\lib\src.zip!/jdk.javadoc/;C:\Program Files\Java\jdk-17\lib\src.zip!/jdk.hotspot.agent/;C:\Program Files\Java\jdk-17\lib\src.zip!/java.base/;C:\Program Files\Java\jdk-17\lib\src.zip!/jdk.localedata/;C:\Program Files\Java\jdk-17\lib\src.zip!/java.xml/;C:\Program Files\Java\jdk-17\lib\src.zip!/jdk.compiler/;C:\Program Files\Java\jdk-17\lib\src.zip!/jdk.jfr/;C:\Program Files\Java\jdk-17\lib\src.zip!/java.xml.crypto/;C:\Program Files\Java\jdk-17\lib\src.zip!/jdk.jdeps/;C:\Program Files\Java\jdk-17\lib\src.zip!/jdk.jconsole/;C:\Program Files\Java\jdk-17\lib\src.zip!/java.compiler/;C:\Program Files\Java\jdk-17\lib\src.zip!/jdk.management/;C:\Program Files\Java\jdk-17\lib\src.zip!/jdk.security.jgss/;C:\Program Files\Java\jdk-17\lib\src.zip!/jdk.accessibility/;C:\Program Files\Java\jdk-17\lib\src.zip!/java.net.http/;C:\Program Files\Java\jdk-17\lib\src.zip!/jdk.jdi/;C:\Program Files\Java\jdk-17\lib\src.zip!/java.rmi/;C:\Program Files\Java\jdk-17\lib\src.zip!/java.naming/;C:\Program Files\Java\jdk-17\lib\src.zip!/jdk.internal.le/;C:\Program Files\Java\jdk-17\lib\src.zip!/jdk.xml.dom/;C:\Program Files\Java\jdk-17\lib\src.zip!/jdk.incubator.foreign/;C:\Program Files\Java\jdk-17\lib\src.zip!/java.sql/;C:\Program Files\Java\jdk-17\lib\src.zip!/jdk.management.agent/;C:\Program Files\Java\jdk-17\lib\src.zip!/jdk.security.auth/;C:\Program Files\Java\jdk-17\lib\src.zip!/jdk.jlink/;C:\Program Files\Java\jdk-17\lib\src.zip!/jdk.internal.vm.ci/;C:\Program Files\Java\jdk-17\lib\src.zip!/java.security.jgss/;C:\Program Files\Java\jdk-17\lib\src.zip!/jdk.crypto.ec/;C:\Program Files\Java\jdk-17\lib\src.zip!/jdk.charsets/;C:\Program Files\Java\jdk-17\lib\src.zip!/jdk.internal.jvmstat/;C:\Program Files\Java\jdk-17\lib\src.zip!/java.management/;C:\Program Files\Java\jdk-17\lib\src.zip!/jdk.jshell/;C:\Program Files\Java\jdk-17\lib\src.zip!/java.logging/;C:\Program Files\Java\jdk-17\lib\src.zip!/jdk.dynalink/;C:\Program Files\Java\jdk-17\lib\src.zip!/jdk.sctp/;C:\Program Files\Java\jdk-17\lib\src.zip!/java.prefs/;C:\Program Files\Java\jdk-17\lib\src.zip!/jdk.httpserver/;C:\Program Files\Java\jdk-17\lib\src.zip!/java.security.sasl/;C:\Program Files\Java\jdk-17\lib\src.zip!/jdk.jpackage/;C:\Program Files\Java\jdk-17\lib\src.zip!/java.sql.rowset/;C:\Program Files\Java\jdk-17\lib\src.zip!/jdk.incubator.vector/;C:\Program Files\Java\jdk-17\lib\src.zip!/jdk.crypto.mscapi/;C:\Program Files\Java\jdk-17\lib\src.zip!/java.smartcardio/;C:\Program Files\Java\jdk-17\lib\src.zip!/jdk.random/;C:\Program Files\Java\jdk-17\lib\src.zip!/jdk.jstatd/;C:\Program Files\Java\jdk-17\lib\src.zip!/jdk.management.jfr/;C:\Program Files\Java\jdk-17\lib\src.zip!/jdk.jartool/;C:\Program Files\Java\jdk-17\lib\src.zip!/jdk.internal.opt/;C:\Program Files\Java\jdk-17\lib\src.zip!/jdk.crypto.cryptoki/;C:\Program Files\Java\jdk-17\lib\src.zip!/java.management.rmi/;C:\Program Files\Java\jdk-17\lib\src.zip!/jdk.attach/;C:\Program Files\Java\jdk-17\lib\src.zip!/jdk.jcmd/;C:\Program Files\Java\jdk-17\lib\src.zip!/java.scripting/;C:\Program Files\Java\jdk-17\lib\src.zip!/java.datatransfer/;C:\Program Files\Java\jdk-17\lib\src.zip!/java.instrument/;C:\Program Files\Java\jdk-17\lib\src.zip!/jdk.unsupported/;C:\Program Files\Java\jdk-17\lib\src.zip!/jdk.naming.rmi/;C:\Program Files\Java\jdk-17\lib\src.zip!/jdk.unsupported.desktop/;C:\Program Files\Java\jdk-17\lib\src.zip!/jdk.internal.ed/;C:\Program Files\Java\jdk-17\lib\src.zip!/jdk.zipfs/;C:\Program Files\Java\jdk-17\lib\src.zip!/jdk.net/;C:\Program Files\Java\jdk-17\lib\src.zip!/jdk.naming.dns/;C:\Program Files\Java\jdk-17\lib\src.zip!/jdk.internal.vm.compiler/;C:\Program Files\Java\jdk-17\lib\src.zip!/java.transaction.xa/;C:\Program Files\Java\jdk-17\lib\src.zip!/jdk.editpad/;C:\Program Files\Java\jdk-17\lib\src.zip!/jdk.nio.mapmode/;C:\Program Files\Java\jdk-17\lib\src.zip!/jdk.internal.vm.compiler.management/;C:\Program Files\Java\jdk-17\lib\src.zip!/java.se/;C:\Program Files\Java\jdk-17\lib\src.zip!/jdk.jsobject/;C:\Program Files\Java\jdk-17\lib\src.zip!/jdk.jdwp.agent/
+
+Platform Javadoc: https://docs.oracle.com/en/java/javase/17/docs/api/
+
+Finish
+
+Cambiar del JDK que se usa en Apache NetBeans 16 por defecto
+############################################################
+Cerrar Apache NetBeans 16
+
+https://stackoverflow.com/questions/2809366/changing-java-platform-on-which-netbeans-runs
+
+Cannot locate java installation in specified jdkhome:
+C:\Users\leand\jdk-17
+Do you want to try to use default version?
+NO.
+
+Para corregir esto, hay que copiar todo el directorio en Archivos de Programa a la ruta especificada, y listo.
+
+Creación del proyecto de aplicación web
+#######################################
+
+File...
+New Project
+
+Java with Maven?
+Java with Gradle?
+Java with Ant?
+
+https://www.baeldung.com/ant-maven-gradle
+https://www.jrebel.com/blog/java-build-tools-comparison
+
+Conclusión: Usar Maven.
+
+Java with Maven >> Web Application
+Activating Java Web and EE...
+
+Project Name: apalpro
+Project Location: C:\Users\leand\Documents\NetBeansProjects
+Project Folder: C:\Users\leand\Documents\NetBeansProjects\apalpro
+
+Firm Name: alprosoft
+
+Artifact Id: apalpro
+Group Id: co.com.alprosoft
+Version: 1.0-SNAPSHOT
+Package: co.com.alprosoft.apalpro
+
+Next
+
+Elegir Servidor
+
+Server: ??? => (Add...)
+Java EE Version: ??? => Jakarta EE 9.1 Web, Jakarta EE 9 Web, Jakarta EE 8 Web, Java EE 8 Web, Java EE 7 Web, Java EE 6 Web, Java EE 5
+
+https://jakarta.ee/release/9.1/
+Jakarta EE 10 Is Now Available! (Esto puede ser un problema)
+
+Server:
+Amazon Beanstalk? => Descartado por ser de Amazon; no sé usar tecnología de Amazon, y Amazon parece contar con un framework muy impositivo.
+Apache Tomcat or Tom EE?
+Glassfish Server?
+Payara Server?
+WildFly Application Server?
+
+https://stackify.com/tomcat-vs-jetty-vs-glassfish-vs-wildfly/
+https://www.quora.com/Which-is-the-best-Java-application-server
+https://stackoverflow.com/questions/2692701/choosing-an-application-server-for-web-application-development
+https://www.theserverside.com/resources/Java-application-servers
+https://www.theserverside.com/feature/Is-Apache-Tomcat-the-right-Java-application-server-for-you
+https://www.computerworld.com/article/2782660/how-to-pick-a-java-application-server.html
+
+https://serverguy.com/servers/open-source-java-ee-application-servers/
+
+https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/create_deploy_Java.html
+
+Se elegirá Payara Server
+https://www.payara.fish/
+https://docs.payara.fish/
+https://docs.payara.fish/community/docs/Release%20Notes/Release%20Notes%206.2023.1.html
+
+https://www.payara.fish/downloads/payara-platform-community-edition/
+
+Release notes - Payara Platform Community 6.2023.1
+Supported APIs and Applications
+Jakarta EE 10
+Jakarta EE 10 Applications
+
+¿Cómo obtener Jakarta EE 10 en Apache NetBeans 16?
+https://jakarta.ee/release/10/
+https://jakarta.ee/specifications/platform/10/
+https://jakarta.ee/specifications/webprofile/10/
+
+https://jakarta.ee/compatibility/
+https://jakarta.ee/compatibility/certification/10/
+
+Jakarta EE Platform 10
+Minimum Java SE Version
+Java SE 11 or higher
+
+Jakarta EE Web Profile 10 => Este es de interés.
+Minimum Java SE Version
+Java SE 11 or higher
+	
+Installation Location:
+C:\Users\leand\Payara_Server
+Elegir: Local Domain
+
+Server to download: 6.2023.1
+Arriesguémonos a ver...
+I have read and accept the license agreeement... (click)
+Download Now...
+
+C:\Users\leand\Payara_Server does not exist but server can be downloaded and installed there.
+
+...
+
+Detected a 6.2023.1 install. Click Next to register remote or custom local domains.
+
+https://stackoverflow.com/questions/22721311/where-does-netbeans-store-the-information-located-in-services-servers
+under [NETBEANS_HOME]/nb/config
+
+Domain Location:
+Domain: domain1
+Host: localhost
+CHECK Loopback
+DAS Port: 4848 (DEFAULT)
+HTTP Port: 8080 (DEFAULT)
+Target:
+User Name:
+Password:
+
+No agreguemos más valores a esto.
+
+Ahora, se necesita Jakarta EE 10 Web y no Jakarta EE 9.1 Web para poder usar Payara Server 6.2023.1.
+
+Ya se ha confirmado que se está usando el JDK 16.
+
+No obstante, el IDE de NetBeans 16 insiste en que se use Jakarta EE 9.1 Web.
+
+En Tools >> Servers... Se encuentra el Payara Server.
+
+Entonces, se hace lo siguiente, y se asumen los riesgos de incompatibilidad aparente entre las versiones de Jakarta EE y Payara Server:
+En el IDE de NetBeans 16, se crea una aplicación web con Maven, con servidor Payara Server 6.2023.1 y Jakarta EE 9.1 Web.
+
+Finish.
+
+------------------------------------------------------------------------
+BUILD SUCCESS
+------------------------------------------------------------------------
+Total time:  15.840 s
+Finished at: 2023-01-24T16:40:57-05:00
+------------------------------------------------------------------------
+
+Debería probar que la aplicación web funciona... Pero antes, debería incluir un par de dependencias para poder probarlo.
+
+ADVERTENCIA: Payara Server no funciona con el JDK 16.
+
+https://stackoverflow.com/questions/70258471/payara-server-does-not-work-with-netbeans-12-6-and-jdk-17
+
+You can only use LTS releases for Payara, which currently means that your only JDK options are 8, 11 and 17. See Why Payara Platform Only Supports LTS Versions of JDK for more information on that.
+https://blog.payara.fish/why-payara-platform-only-supports-lts-versions-of-jdk
+
+Why Does the Payara Platform Only Support LTS?
+The Payara Products are a rather complex combination consisting of many other products, libraries, and code that deliver you the Jakarta-certified solution for Java Enterprise. We are using EclipseLink as JPA implementation, Jersey for Rest, Apache Felix for the OSGI container, and Jackson for JSON support, to name just a few.
+
+This means that not only does our code need to be updated for a new JDK release, but we also need to wait on the other products and libraries to do the same. By the time all our dependencies are upgraded and we have changed our code and tested out the product, the 6 months are almost over. And when a new JDK release comes out, the previous one is no longer supported and thus our users can run the Payara Platform products on a supported JDK.
+
+And in most cases, Enterprise applications prefer stability over new features, as they put more focus on the end-user functionality than the underlying technology. We've found there are not too many customers who want to run the Payara Products on the newest JDK version.
+
+CONCLUSIÓN: SE DEBE INSTALAR EL JAVA SE 17 DESDE ORACLE.
+https://www.oracle.com/java/technologies/downloads/#java17
+
+Windows
+https://download.oracle.com/java/17/latest/jdk-17_windows-x64_bin.exe
+https://www.oracle.com/java/technologies/javase-jdk17-doc-downloads.html
+
+Opcional: https://download.oracle.com/java/17/latest/jdk-17_windows-x64_bin.zip
+
+
+Configuración básica de la arquitectura de la aplicación en Apache NetBeans 16
+------------------------------------------------------------------------------
+Dependencias
+############
+Se necesitan dos dependencias desde Maven, ingresadas en el archivo pom.xml, como mínimo:
+
+1) MySQL Connector Java
+
+https://mvnrepository.com/artifact/mysql/mysql-connector-java
+
+MySQL Connector/J is a JDBC Type 4 driver, which means that it is pure Java implementation of the MySQL protocol and does not rely on the MySQL client libraries. This driver supports auto-registration with the Driver Manager, standardized validity checks, categorized SQLExceptions, support for large update counts, support for local and offset date-time variants from the java.time package, support for JDBC-4.x XML processing, support for per connection client information and support for the NCHAR, NVARCHAR ...
+
+version
+8.0.32
+
+https://mvnrepository.com/artifact/mysql/mysql-connector-java/8.0.32
+
+<!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
+<dependency>
+    <groupId>mysql</groupId>
+    <artifactId>mysql-connector-java</artifactId>
+    <version>8.0.32</version>
+</dependency>
+
+2) Gson
+
+https://mvnrepository.com/artifact/com.google.code.gson/gson
+
+Gson is a Java library that can be used to convert Java Objects into their JSON representation. It can also be used to convert a JSON string to an equivalent Java object.
+
+version
+2.10.1
+
+https://mvnrepository.com/artifact/com.google.code.gson/gson/2.10.1
+
+<!-- https://mvnrepository.com/artifact/com.google.code.gson/gson -->
+<dependency>
+    <groupId>com.google.code.gson</groupId>
+    <artifactId>gson</artifactId>
+    <version>2.10.1</version>
+</dependency>
+
+
+No obstante, aquí también se puede corregir el problema de la versión de Jakarta JakartaEE API
+
+3) Jakarta JakartaEE API
+
+https://mvnrepository.com/artifact/jakarta.platform/jakarta.jakartaee-api
+
+Jakarta JakartaEE API
+
+https://mvnrepository.com/artifact/jakarta.platform/jakarta.jakartaee-api/10.0.0
+
+<!-- https://mvnrepository.com/artifact/jakarta.platform/jakarta.jakartaee-api -->
+<dependency>
+    <groupId>jakarta.platform</groupId>
+    <artifactId>jakarta.jakartaee-api</artifactId>
+    <version>10.0.0</version>
+    <scope>provided</scope>
+</dependency>
+
+También se modificó lo siguiente en nb-configuration.xml:
+<!-- <org-netbeans-modules-maven-j2ee.netbeans_2e_hint_2e_j2eeVersion>9.1-web</org-netbeans-modules-maven-j2ee.netbeans_2e_hint_2e_j2eeVersion> -->
+        <org-netbeans-modules-maven-j2ee.netbeans_2e_hint_2e_j2eeVersion>10.0-web</org-netbeans-modules-maven-j2ee.netbeans_2e_hint_2e_j2eeVersion>
+
+Ahora, reconstruyamos el proyecto para incluir las nuevas dependencias en el proyecto: Clean and Build.
+
+------------------------------------------------------------------------
+BUILD SUCCESS
+------------------------------------------------------------------------
+Total time:  59.213 s
+Finished at: 2023-01-24T16:49:10-05:00
+------------------------------------------------------------------------
+
+Ahora, es momento de ejecutar la aplicación web para saber si el proyecto base en Java funciona o no.
+
+FUNCIONA.
+
+http://localhost:8080/
+http://localhost:8080/apalpro/
+
+Excepto que hay un error:
+WARNING:   The web application [unknown] registered the JDBC driver [com.mysql.cj.jdbc.Driver] but failed to unregister it when the web application was stopped. To prevent a memory leak, the JDBC Driver has been forcibly unregistered.
+
+https://stackoverflow.com/questions/3320400/to-prevent-a-memory-leak-the-jdbc-driver-has-been-forcibly-unregistered
+https://stackoverflow.com/questions/3320400/to-prevent-a-memory-leak-the-jdbc-driver-has-been-forcibly-unregistered/23912257#23912257
+
+There is nothing wrong in your code, the bug is in JDBC driver code itself
+
+CONCLUSIÓN: IGNORA ESTE ERROR.
+
+Construcción del modelo del backend según los conceptos DTO, DAO y MVC (Patrón de software)
+###########################################################################################
+
+https://www.ecodeup.com/patrones-de-diseno-en-java-mvc-dao-y-dto/
+
+https://stackoverflow.com/questions/14366001/dto-and-dao-concepts-and-mvc
+
+DTO: Data Transfer Object
+=========================
+USE THIS OBJECT (FROM A CLASS) TO TRANSFER DATA.
+
+DTO is an abbreviation for Data Transfer Object, so it is used to transfer the data between classes and modules of your application.
+
+DTO should only contain private fields for your data, getters, setters, and constructors.
+DTO is not recommended to add business logic methods to such classes, but it is OK to add some util methods.
+
+DAO: Data Access Object
+=======================
+USE THIS OBJECT (FROM A CLASS) TO ACCESS DATA.
+
+DAO is an abbreviation for Data Access Object, so it should encapsulate the logic for retrieving, saving and updating data in your data storage (a database, a file-system, whatever).
+
+Here is an example of how the DAO and DTO interfaces would look like:
+
+interface PersonDTO {
+    String getName();
+    void setName(String name);
+    //.....
+}
+
+interface PersonDAO {
+    PersonDTO findById(long id);
+    void save(PersonDTO person);
+    //.....
+}
+
+MVC: MODEL-VIEW-CONTROLLER PATTERN
+==================================
+FRAMEWORK TO ORGANIZE THE WHOLE APPLICATION
+DAO/DTO : MODEL
+
+The MVC is a wider pattern. The DTO/DAO would be your model in the MVC pattern.
+It tells you how to organize the whole application, not just the part responsible for data retrieval.
+
+VIEW AND CONTROLLER SHOULD BE IN SEPARATE CLASSES TO SEPARATE BUSINESS LOGIC FROM THE VIEW.
+As for the second question, if you have a small application it is completely OK, however, if you want to follow the MVC pattern it would be better to have a separate controller, which would contain the business logic for your frame in a separate class and dispatch messages to this controller from the event handlers.
+This would separate your business logic from the view.
+
+
+En NetBeans 16 hay un error que no permite hacer refactoring de nombres de paquetes Java sin warnings:
+Potential changes cannot be propagated to C:\Users\leand\Documents\NetBeansProjects\apalpro\src\main\resources\META-INF\persistence.xml because C:\Users\leand\Documents\NetBeansProjects\apalpro\src\main\resources\META-INF\persistence.xml is invalid.
+
+https://stackoverflow.com/questions/22000390/possibility-to-eliminate-persistence-xml
+https://www.infoworld.com/article/3379043/what-is-jpa-introduction-to-the-java-persistence-api.html
+
+For simple web applications, web.xml is not required as Servlet spec 3.0 attempts to de-emphasize deployment descriptors. For JPA applications, persistence.xml is required.
+
+For those interested in the details, the sources below describe the above statement:
+
+Servlet 3.0: spec states the following about web.xml:
+
+Section 10.13, “Inclusion of a web.xml Deployment Descriptor” was added which removes requirement for Java EE compliant web applications. The section is as follows:194 Java Servlet Specification • November 2009 A web application is NOT required to contain a web.xml if it does NOT contain any Servlet, Filter, or Listener components. In other words an application containing only static files or JSP pages does not require a web.xml to be present.
+
+JPA 2.0: spec states the following about persistence.xml:
+
+The set of entities that can be managed by a given EntityManager instance is defined by a persistence unit. A persistence unit is defined by a persistence.xml
+
+Supongo que el archivo persistence.xml sólo es requerido si se va a hacer una aplicación JPA (Y este no es el caso).
+De la misma forma que el archivo web.xml sólo es requerido en algunos casos específicos.
+
+CONCLUSIÓN: IGNORE EL MENSAJE DE ADVERTENCIA QUE APARECE CUANDO SE HACE REFACTORING.
+
+##################################################################################################################
+NOTA: AL HACER UN CLEAN AND BUILD DE UNA APLICACIÓN WEB CON JAKARTA EE, SIEMPRE SE DEBE DETENER ANTES EL SERVIDOR.
+DE LO CONTRARIO, ESTO DARÁ PROBLEMAS.
+##################################################################################################################
+
+##################################################################################################################
+NOTA: PUEDE SER CONVENIENTE HACER QUE, EN LA BASE DE DATOS, LOS CAMPOS DE input_data Y expected_output DE LA TABLA test_cases
+TENGAN EL VALOR DE CADENA VACÍA ("") EN VEZ DE NULL, POR DEFECTO.
+##################################################################################################################
+
+##################################################################################################################
+IMPORTANTE: VALIDAR QUE EL role_id DEL USUARIO EXISTA EN LA BASE DE DATOS AL CREAR UN NUEVO USUARIO.
+##################################################################################################################
+
+##################################################################################################################
+IMPORTANTE: CONSIDERE AGREGAR EL CAMPO evaluated_at PARA DESCRIBIR LA FECHA/HORA EN QUE SE TERMINÓ DE HACER 
+LA EVALUACIÓN DE UNA PROPUESTA DE SOLUCIÓN.
+##################################################################################################################
+
+##################################################################################################################
+IMPORTANTE: INCONVENIENTE: SE DISEÑÓ EN BASE DE DATOS QUE LA PROPUESTA DE SOLUCIÓN NO PODÍA TENER UN ID DE 
+RESULTADO DE EVALUACIÓN NULO...
+PODRÍA CAMBIARLO A QUE SE PERMITIESEN VALORES NULOS ALLÍ...
+##################################################################################################################
+
+
+Directorio para hacer evaluaciones automáticas
+----------------------------------------------
+C:\Users\leand\Documents\NetBeansProjects\apalpro\assessments
+
+¿Cómo encontrar que un directorio existe en la ruta especificada?
+https://stackoverflow.com/questions/15571496/how-to-check-if-a-folder-exists
+
+File f = new File("/Path/To/File/or/Directory");
+if (f.exists() && f.isDirectory()) {
+   ...
+}
+correct answer, but a small notice: if(f.isDirectory()) {...} would be enough, as it checks also existence. – 
+G. Demecki
+ Jan 21, 2015 at 11:33
+
+¿Cómo crear un nuevo directorio en la ruta especificada?
+https://www.javatpoint.com/how-to-create-a-new-folder-in-java
+
+¿Cómo crear un nuevo archivo y escribir en él?
+https://stackoverflow.com/questions/2885173/how-do-i-create-a-file-and-write-to-it
+
+Note that each of the code samples below may throw IOException. 
+Try/catch/finally blocks have been omitted for brevity. 
+See this tutorial for information about exception handling.
+
+Note that each of the code samples below will overwrite the file if it already exists
+
+Creating a text file:
+
+PrintWriter writer = new PrintWriter("the-file-name.txt", "UTF-8");
+writer.println("The first line");
+writer.println("The second line");
+writer.close();
+
+Creating a binary file:
+
+byte data[] = ...
+FileOutputStream out = new FileOutputStream("the-file-name");
+out.write(data);
+out.close();
+
+UTF-8: Debería servir para incluir las tildes, diéresis, y la ñ del español.
+https://www.utf8-chartable.de/
+
+¿Cómo separar una cadena de caracteres por saltos de línea?
+https://stackoverflow.com/questions/454908/split-java-string-by-new-line
+This should cover you:
+String lines[] = string.split("\\r?\\n");
+There's only really two newlines (UNIX and Windows) that you need to worry about.
+
+A JTextArea document SHOULD use only '\n'; its Views completely ignore '\r'. But if you're going to look for more than one kind of separator, you might as well look for all three: "\r?\n|\r". – 
+Alan Moore
+ Jan 18, 2009 at 18:02
+
+¿Cómo hacer que un programa de Java ejecute un programa por línea de comando y obtenga la salida de este programa?
+https://stackoverflow.com/questions/5711084/java-runtime-getruntime-getting-output-from-executing-a-command-line-program
+
+Here is the way to go:
+
+Runtime rt = Runtime.getRuntime();
+String[] commands = {"system.exe", "-get t"};
+Process proc = rt.exec(commands);
+
+BufferedReader stdInput = new BufferedReader(new 
+     InputStreamReader(proc.getInputStream()));
+
+BufferedReader stdError = new BufferedReader(new 
+     InputStreamReader(proc.getErrorStream()));
+
+// Read the output from the command
+System.out.println("Here is the standard output of the command:\n");
+String s = null;
+while ((s = stdInput.readLine()) != null) {
+    System.out.println(s);
+}
+
+// Read any errors from the attempted command
+System.out.println("Here is the standard error of the command (if any):\n");
+while ((s = stdError.readLine()) != null) {
+    System.out.println(s);
+}
+Read the Javadoc for more details here. ProcessBuilder would be a good choice to use.
+
+https://docs.oracle.com/javase/7/docs/api/java/lang/Runtime.html
+https://www.tabnine.com/code/java/methods/java.lang.Runtime/exec
+
+##################################################################################################################
+IMPORTANTE: SI EL TEXTO DE LA SALIDA ESTÁNDAR SE OBTIENE DE UN CANAL DIFERENTE AL TEXTO DEL ERROR ESTÁNDAR,
+ENTONCES CONVIENE SEPARAR TANTO LA SALIDAD ESTÁNDAR COMO EL ERROR ESTÁNDAR EN CADA EVALUACIÓN DE CASO DE PRUEBA.
+##################################################################################################################
+
+¿Cómo ejecutar un programa en Python 3 por línea de comandos, indicando los datos de entrada ahí mismo?
+https://www.nbshare.io/notebook/330457785/How-To-Take-String-Input-From-Command-Line-In-Python/
+
+https://docs.oracle.com/javase/7/docs/api/java/lang/Runtime.html
+https://docs.oracle.com/javase/7/docs/api/java/lang/Process.html
+https://docs.oracle.com/javase/7/docs/api/java/lang/ProcessBuilder.html
+
+NO:
+https://www.geeksforgeeks.org/taking-input-from-console-in-python/
+https://opensourceoptions.com/blog/how-to-pass-arguments-to-a-python-script-from-the-command-line/
+https://www.geeksforgeeks.org/fileinput-input-in-python/
+
+https://es.ifixit.com/Respuestas/Ver/342442/Text+selection+issue+on+double-click+behavior+in+Windows+10
+
+Proceso de evaluación automática a considerar en la aplicación web (servidor Jakarta EE - Java)
+-----------------------------------------------------------------------------------------------
+1 - Implementación de la funcionalidad de evaluación:
+a) Crear 1 usuario con rol de profesor
+
+b) Crear 1 ejercicio con sus respectivos casos de prueba - Algunos casos de prueba serán visibles al estudiante, mientras que otros estarán ocultos.
+b*) USUALMENTE, se debe autenticar que el usuario que haga esta petición sea un profesor, porque sólo un profesor puede crear ejercicios con casos de prueba.
+
+c) Crear 1 usuario con rol de estudiante
+
+d) Ver los datos de un ejercicio, según id, sólo con los casos de prueba visibles. 
+(ALTERNATIVA DESCARTADA: Otra alternativa sería enviar los datos de un ejercicio con todos los casos de prueba, y que la aplicación cliente valide cuáles casos de prueba son visibles para el usuario - Esto ahorraría recursos de servidor para procesar evaluaciones porque ya no sería necesario obtener todos los casos de prueba desde el servidor, sino que esta información sería proporcionado por el cliente. Si no, habría que obtener dos veces los casos de prueba de la base de datos desde el servidor: Una petición para que el estudiante sólo vea los casos de prueba visibles, y otra, cuando se hace la evaluación, de todos los casos de prueba del ejercicio. Pero, esto podría hacer más insegura a la aplicación, en cuanto a que no se validarían si los casos de prueba dados por la aplicación cliente son los casos de prueba que realmente se deberían evaluar.)
+
+e) Crear (registrar) 1 propuesta de solución (COMO ESTUDIANTE) para un problema, que no cumpla con al menos un caso de prueba y almacenar los datos de la evaluación de la misma.
+f) Crear (registrar) 1 propuesta de solución (COMO ESTUDIANTE) para un problema, que sí cumpla con al menos un caso de prueba y almacenar los datos de la evaluación de la misma.
+Tanto en c) como en d) es particularmente importante desarrollar la lógica del proceso de envío y evaluación de una propuesta de solución:
+Cuando el usuario (usualmente un estudiante) envía una propuesta de solución (en Python 3):
+I) Se toma el código escrito en Python 3, el id del usuario (sea estudiante, profesor o administrador) y el id del ejercicio para que estos datos sean procesados en la aplicación web
+II) La aplicación web debe, entonces, ordenar la ejecución de un intérprete de Python 3 que evalúe la propuesta de solución (código) del usuario que envió el usuario por medio de la comprobación del cumplimiento de este código de todos los casos de prueba (entradas - salidas) descritos para el ejercicio. Esto implica:
+i) Asegurarse de que los datos de id de usuario y id de ejercicio existan. Si no, devuelva un mensaje al usuario diciendo que se requiere el id de usuario y el id de ejercicio para realizar la evaluación. NOTA: El código puede estar vacío (sin caracteres), y esto es válido (aunque la evaluación en este caso, muy seguramente, será desfavorable para el estudiante)
+ii) Crear el registro en base de datos de la propuesta de solución, ingresando el id del usuario y el código - El registro created_at muestra la fecha de cuándo se hizo esto. Asimismo, se debe referenciar el id de la propuesta de solución para algunos de los pasos posteriores de este proceso.
+iii) Internamente, obtener los datos de los casos de prueba que han sido asignados al ejercicio, con base en el id del ejercicio.
+iv) Si se encontraron casos de prueba, crear el archivo .py correspondiente al código enviado por el estudiante en el servidor. Si no, devuelva un mensaje diciendo que no existen casos de prueba para el problema dado.
+PERO: Hay diferentes usuarios: Crear un directorio por usuario, y colocar el archivo .py en este directorio. (Nota: Sólo se debería hacer, máximo, 1 evaluación a la vez, por cliente, para evitar conflictos entre evaluación y evaluación).
+v) Ejecutar los n casos de prueba del ejercicio => Así que el programa .py se ejecutará n veces en el servidor, pero cada vez, con datos de entrada diferentes, según el caso de prueba a evaluar. PARA CADA CASO DE PRUEBA: Se deben obtener los datos de salida (texto) del programa .py. Luego, se van almacenando los datos de evaluación del caso de prueba en la base de datos: id de la propuesta de solución, id del caso de prueba, salida producida por el programa, y el resultado final de la evaluación, conforme a la comparación de los textos de salida esperada del caso de prueba y la salida que produjo el programa, el cual puede ser OK o NO OK.
+vi) Al finalizar la ejecución, elimine el archivo .py (y el directorio del usuario), y almacene el resultado final de evaluación de la solución propuesta en la base de datos, mirando los resultados OK y NO OK obtenidos en los casos de prueba: Si todos son OK, almacene OK; si no, almacene NO OK.
+vii) Si este proceso es exitoso, haga COMMIT en la base de datos; si hay una excepción (fallo) durante cualquier parte del proceso, y ya se ha almacenado información (temporalmente) en la base de datos, haga ROLLBACK para deshacer los cambios.
+
+NOTA: Debe configurarse un directorio, desde el servidor, en donde se irán procesando los archivos .py y evaluando los casos de prueba correspondientes.
+
+
+Conexión de DBeaver a la base de datos MySQL
+--------------------------------------------
+Nueva conexión
+MySQL
+Siguiente
+Server Host: localhost
+Port: 3306
+Database: apalpro
+
+Authentication (Database Native):
+Nombre de usuario: root
+Contraseña: mysql
+Save password locally
+
+Advanced:
+Server Time Zone: Auto-detect
+Local client: MySQL Server 8.0
+
+Driver Name: MySQL
+
+Probar conexión...
+
+Tipo de conexión: Development
+
+Server: MySQL 8.0.32
+Driver: MySQL Connector/J mysql-connector-java-8.0.17 (Revision: 16a712ddb3f826a1933ab42b0039f7fb9eebc6ec)
+
+Address: localhost:3306
+URL: jdbc:mysql://localhost:3306/apalpro

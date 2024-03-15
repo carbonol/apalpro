@@ -1,0 +1,35 @@
+cd C:\Users\leand\Documents\NetBeansProjects; JAVA_HOME=C:\\Users\\leand\\jdk1.8.0_301 cmd /c "\"C:\\Program Files\\NetBeans-16\\netbeans\\java\\maven\\bin\\mvn.cmd\" -DarchetypeGroupId=io.github.juneau001 -DarchetypeArtifactId=webapp-jakartaee91 -DarchetypeVersion=1.1.0 -DarchetypeRepository=https://repo.maven.apache.org/maven2 -DgroupId=co.com.alprosoft -DartifactId=apalpro -Dversion=1.0-SNAPSHOT -Dpackage=co.com.alprosoft.apalpro -Dbasedir=C:\\Users\\leand\\Documents\\NetBeansProjects -Darchetype.interactive=false -DarchetypeCatalog=local \"-Dmaven.ext.class.path=C:\\Program Files\\NetBeans-16\\netbeans\\java\\maven-nblib\\netbeans-eventspy.jar\" --batch-mode org.apache.maven.plugins:maven-archetype-plugin:3.2.1:generate"
+Scanning for projects...
+
+------------------< org.apache.maven:standalone-pom >-------------------
+Building Maven Stub Project (No POM) 1
+--------------------------------[ pom ]---------------------------------
+
+>>> maven-archetype-plugin:3.2.1:generate (default-cli) > generate-sources @ standalone-pom >>>
+
+<<< maven-archetype-plugin:3.2.1:generate (default-cli) < generate-sources @ standalone-pom <<<
+
+
+--- maven-archetype-plugin:3.2.1:generate (default-cli) @ standalone-pom ---
+Generating project in Batch mode
+Archetype not found in any catalog. Falling back to central repository.
+Add a repository with id 'archetype' in your settings.xml if archetype's repository is elsewhere.
+----------------------------------------------------------------------------
+Using following parameters for creating project from Archetype: webapp-jakartaee91:1.1.0
+----------------------------------------------------------------------------
+Parameter: groupId, Value: co.com.alprosoft
+Parameter: artifactId, Value: apalpro
+Parameter: version, Value: 1.0-SNAPSHOT
+Parameter: package, Value: co.com.alprosoft.apalpro
+Parameter: packageInPathFormat, Value: co/com/alprosoft/apalpro
+Parameter: version, Value: 1.0-SNAPSHOT
+Parameter: package, Value: co.com.alprosoft.apalpro
+Parameter: groupId, Value: co.com.alprosoft
+Parameter: artifactId, Value: apalpro
+Project created from Archetype in dir: C:\Users\leand\Documents\NetBeansProjects\apalpro
+------------------------------------------------------------------------
+BUILD SUCCESS
+------------------------------------------------------------------------
+Total time:  15.840 s
+Finished at: 2023-01-24T16:40:57-05:00
+------------------------------------------------------------------------

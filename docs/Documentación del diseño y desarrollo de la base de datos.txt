@@ -1,0 +1,396 @@
+Desarrollo del diseño y desarrollo de la base de datos
+------------------------------------------------------
+
+Motor de bases de datos: MySQL
+MySQL Server 8.0.32
+
+https://dev.mysql.com/doc/
+
+Para gestionar la base de datos, usar:
+MySQL 8.0 Command Line Client
+
+https://dev.mysql.com/doc/refman/8.0/en/mysql-commands.html
+
+Para diseñar y gestionar la base de datos, se puede usar:
+DBeaver 22.3.3 (23.01.2023) : Este software suele pedir actualizaciones con mucha frecuencia de forma automática...
+
+https://github.com/dbeaver/dbeaver/wiki
+
+Diseño de la base de datos
+--------------------------
+Usar DBeaver.
+
+La idea es establecer una conexión con la base de datos a través de DBeaver.
+
+Para ello, no obstante, se debe crear primero la base de datos MySQL.
+
+Para gestionar la base de datos, usar:
+MySQL 8.0 Command Line Client
+
+Enter password: *****
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 9
+Server version: 8.0.32 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2023, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql>
+
+SHOW PROCESSLIST;
+
+mysql> SHOW PROCESSLIST;
++----+-----------------+-----------------+------+---------+------+------------------------+------------------+
+| Id | User            | Host            | db   | Command | Time | State                  | Info             |
++----+-----------------+-----------------+------+---------+------+------------------------+------------------+
+|  5 | event_scheduler | localhost       | NULL | Daemon  | 9663 | Waiting on empty queue | NULL             |
+|  9 | root            | localhost:50271 | NULL | Query   |    0 | init                   | SHOW PROCESSLIST |
++----+-----------------+-----------------+------+---------+------+------------------------+------------------+
+2 rows in set (0.02 sec)
+
+https://dev.mysql.com/doc/refman/8.0/en/database-use.html
+
+mysql> SHOW DATABASES;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| sys                |
++--------------------+
+4 rows in set (0.21 sec)
+
+Database name: apalpro
+
+mysql> USE apalpro
+ERROR 1049 (42000): Unknown database 'apalpro'
+(Aún no existe)
+
+<< NO HACER ESTO >>
+You can use the test database (if you have access to it) for the examples that follow, but anything you create in that database can be removed by anyone else with access to it. For this reason, you should probably ask your MySQL administrator for permission to use a database of your own. Suppose that you want to call yours menagerie. The administrator needs to execute a statement like this:
+mysql> GRANT ALL ON menagerie.* TO 'your_mysql_name'@'your_client_host';
+
+mysql> CREATE DATABASE apalpro;
+Query OK, 1 row affected (0.14 sec)
+
+mysql> SHOW DATABASES;
++--------------------+
+| Database           |
++--------------------+
+| apalpro            |
+| information_schema |
+| mysql              |
+| performance_schema |
+| sys                |
++--------------------+
+5 rows in set (0.00 sec)
+
+Under Unix, database names are case-sensitive (unlike SQL keywords), so you must always refer to your database as menagerie, not as Menagerie, MENAGERIE, or some other variant. This is also true for table names. (Under Windows, this restriction does not apply, although you must refer to databases and tables using the same lettercase throughout a given query. However, for a variety of reasons, the recommended best practice is always to use the same lettercase that was used when the database was created.)
+
+USE LOWERCASE LETTERS FOR DATABASE AND TABLE NAMES!
+
+mysql> USE apalpro;
+Database changed
+
+COMANDO PARA CONECTARSE A LA BASE DE DATOS MEDIANTE MYSQL CLI:
+$> mysql -h host -u user -p menagerie
+Enter password: ********
+
+Important
+menagerie in the command just shown is not your password. If you want to supply your password on the command line after the -p option, you must do so with no intervening space (for example, as -ppassword, not as -p password). However, putting your password on the command line is not recommended, because doing so exposes it to snooping by other users logged in on your machine.
+
+Ya se creó la base de datos MySQL llamado apalpro.
+Ahora, se debe establecer una conexión con la base de datos a través de DBeaver.
+
+Nueva conexión
+MySQL
+Siguiente
+Server Host: localhost
+Port: 3306
+Database: apalpro
+
+Authentication (Database Native):
+Nombre de usuario: root
+Contraseña: mysql
+Save password locally
+
+Advanced:
+Server Time Zone: Auto-detect
+Local client: MySQL Server 8.0
+
+Driver Name: MySQL
+
+Probar conexión...
+
+Tipo de conexión: Development
+
+Server: MySQL 8.0.32
+Driver: MySQL Connector/J mysql-connector-java-8.0.17 (Revision: 16a712ddb3f826a1933ab42b0039f7fb9eebc6ec)
+
+Address: localhost:3306
+URL: jdbc:mysql://localhost:3306/apalpro
+
+Finalizar.
+
+Listo. Ya se ha establecido una conexión con la base de datos a través de DBeaver.
+
+Ahora, es necesario diseñar la base de datos (e.g., mediante diagramación o por otro medio), y luego, implementarlo mediante DBeaver, y finalmente, el MySQL CLI.
+También es importante documentar los scripts de creación de datos.
+Y también se debe hacer una inicialización de datos.
+
+
+Tablas de la base de datos apalpro
+----------------------------------
+1) Usuarios: users => students, teachers, admins {uname, pwd, names, surnames, role_id}
+{uname, pwd} are needed for authentication => MANDATORY.
+{names, surnames} are for easier identification of users in an university => OPTIONAL, BUT HIGHLY RECOMMENDED.
+
+NOTA: Se recomienda crear una tabla de permisos que complemente a roles y usuarios, si esto se quiere personalizar.
+
+2) Roles: {name, description}: roles
+[1, 'E', 'Estudiante'], // Sólo puede acceder a las vistas y realizar las acciones que puede ver y hacer, respectivamente, un estudiante en el software. Además, no puede ver la información exclusiva a otro estudiante o profesor en el software.
+[2, 'P', 'Profesor'], // Puede acceder a las vistas de profesor y de estudiante, y realizar las acciones que puede hacer tanto un profesor como un estudiante en el software. Adémás, no puede ver la información de la actividad de otros profesores en el software, pero sí puede ver información limitada de la actividad del estudiante en el software.
+[3, 'A', 'Administrador'] // Puede hacer todo lo que normalmente puede hacer un estudiante o un profesor en el software, además de otras funcionalidades exclusivas del administrador, que incluyen ver la actividad de estudiantes y profesores en el software.
+
+Por ahora, no se hará una tabla de permisos, porque esto se considera innecesario por el momento.
+
+Las tablas de Usuarios y Roles existen para poder implementar la autenticación y autorización en el software.
+Así mismo, se espera que en los programas clientes se almacene temporalmente los datos de sesión del usuario (uname y pwd).
+
+3) Ejercicios de programación (que los estudiantes pueden resolver) - Conjunto: exercises {name, description}
+{name}: Identifica el ejercicio (Debe colocarse un nombre. El nombre puede repetirse, aunque esto no se recomienda).
+{description}: Aquí es donde se coloca en texto todos los detalles relevantes del ejercicio para que los estudiantes lo puedan resolver; por supuesto, se debe considerar los casos de prueba del ejercicio. Colocar una descripción aquí es conveniente para el estudiante, pero no es necesario que sea obligatorio, pues esto no es necesario para que el software pueda hacer la evaluación, sino sólo el conjunto de casos de prueba a evaluar.
+
+Nota a futuro: El nombre del ejercicio no debería poder repetirse.
+
+4) Casos de prueba - Conjunto: test_cases {exercise_id, input, expected_output, is_visible}
+
+{input, expected_output}: La pareja de texto que será considerada por el evaluador para evaluar las soluciones de los estudiantes.
+{is_visible}: Indica si el caso de prueba es visible o no para el estudiante. Por defecto, no está visible. Tanto los casos de prueba visibles como no visibles serán evaluadas para determinar si la propuesta de solución es correcta o no.
+
+Atributos desechados:
+{name}: Identifica el caso de prueba (Debería colocarse un nombre. El nombre puede repetirse, aunque esto no se recomienda. El problema aquí es que colocar nombres a todos los casos de prueba puede no ser conveniente para el profesor, especialmente si el número de casos de prueba es muy alto, así que este nombre debería ser opcional, y en este caso, se necesita otro identificador para el caso de prueba - ¿El ID? No sé qué tan útil puede ser esto realmente. No obstante, un tag sí sería útil aquí).
+El nombre del caso de prueba no debería poder repetirse para un solo ejercicio (Excepto si no se indica nombre alguno)
+Así que la dupla id + name es la que no debe poder repetirse aquí.
+{description}: Opcional; puede ser conveniente tanto para el profesor como el estudiante. Sin embargo, una descripción adicional a la entrada y salida esperada de un caso de prueba quizás no ofrezca mucha más utilidad como para añadirlo. En contraste, un identificador de casos de prueba sí es útil.
+
+Atributos a considerar a futuro:
+{is_assessable}: Indica si el caso de prueba es evaluable o no. Por defecto, esto es verdadero.
+
+Es importante considerar cómo identificar cada ejercicio de programación y cada caso de prueba de manera única tanto por estudiantes como por profesores.
+
+5) Propuestas de soluciones (de los estudiantes): solution_proposals (Evaluados) {user_id, code, assessment_result_id}
+
+6) Casos de prueba evaluados: solution_proposal_assessed_test_cases {solution_proposal_id, test_case_id, output, assessment_result_id}
+
+7) Resultados de evaluación: {name, description}: assessment_results
+[1, 'OK', 'Todos los casos de prueba del ejercicio se cumplen con la propuesta de solución dada.'],
+[2, 'Incorrecto', 'Existe al menos un caso de prueba del ejercicio que no se cumple con la propuesta de solución dada.']
+
+Todas las tablas, por motivos de administración y/o funcionamiento de la base de datos MySQL, deben tener los atributos:
+{id, created_at, modified_at, state}
+
+state: TRUE: consider it not invalid / FALSE: consider it invalid or non-existent
+
+A FUTURO
+--------
+El uso de tags en ejercicios de programación y casos de prueba debería ser formalizado en una tabla adicional, que contenga tags que no se repitan.
+Pero ahora, para mantener la aplicación lo suficientemente simple, no se hará esto.
+*) Tags: {name, description}: tags
+*) Tags_Ejercicios: exercise_tags: {id_exercise, id_tag}
+
+Las validaciones a nivel de aplicación y de base de datos se deberían hacer después. [MUY IMPORTANTE]
+
+
+Tablas de la base de datos apalpro: Detalle técnico (MySQL)
+-----------------------------------------------------------
+
+https://stackoverflow.com/questions/25300821/difference-between-varchar-and-text-in-mysql
+https://stackoverflow.com/questions/6404628/varchar-vs-text-in-mysql
+
+https://stackoverflow.com/questions/48772900/best-practices-on-delete-cascade-mysql
+
+https://dev.mysql.com/doc/refman/8.0/en/keywords.html
+
+https://dev.mysql.com/doc/refman/8.0/en/charset-mysql.html
+https://stackoverflow.com/questions/3936967/mysql-is-a-select-statement-case-sensitive
+https://www.monolune.com/articles/what-is-the-utf8mb4_0900_ai_ci-collation
+
+utf8mb4 means that each character is stored as a maximum of 4 bytes in the UTF-8 encoding scheme.
+0900 refers to the Unicode Collation Algorithm version. (The Unicode Collation Algorithm is the method used to compare two Unicode strings that conforms to the requirements of the Unicode Standard).
+ai refers accent insensitivity. That is, there is no difference between e, è, é, ê and ë when sorting.
+ci refers to case insensitivity. This is, there is no difference between p and P when sorting.
+
+If accent sensitivity and case sensitivity are required, you may use utf8mb4_0900_as_cs instead.
+
+Accent sensitivity is required, to deal with spanish characters with accents.
+Case sensitivity... is NOT required.
+
+So, the utf8mb4_0900_as_ci collation should be used in this case.
+
+TABLE roles
+-----------
+BIGINT id PRIMARY KEY NOT NULL AUTO_INCREMENT
+DATETIME created_at NOT NULL DEFAULT NOW()
+DATETIME modified_at
+BOOL status NOT NULL DEFAULT TRUE
+VARCHAR(64) name NOT NULL
+VARCHAR(512) description
+
+TABLE users
+-----------
+BIGINT id PRIMARY KEY NOT NULL AUTO_INCREMENT
+DATETIME created_at NOT NULL DEFAULT NOW()
+DATETIME modified_at
+BOOL status NOT NULL DEFAULT TRUE
+VARCHAR(128) uname NOT NULL UNIQUE
+VARCHAR(128) pwd NOT NULL
+VARCHAR(256) names NOT NULL
+VARCHAR(256) surnames NOT NULL
+INT role_id NOT NULL FOREIGN KEY [CONSTRAINT users_FK FOREIGN KEY (role_id) REFERENCES apalpro.roles(id) ON DELETE RESTRICT ON UPDATE CASCADE]
+
+TABLE exercises
+---------------
+BIGINT id PRIMARY KEY NOT NULL AUTO_INCREMENT
+DATETIME created_at NOT NULL DEFAULT NOW()
+DATETIME modified_at
+BOOL status NOT NULL DEFAULT TRUE
+VARCHAR(256) name NOT NULL
+TEXT description
+
+TABLE test_cases
+----------------
+BIGINT id PRIMARY KEY NOT NULL AUTO_INCREMENT
+DATETIME created_at NOT NULL DEFAULT NOW()
+DATETIME modified_at
+BOOL status NOT NULL DEFAULT TRUE
+BIGINT exercise_id NOT NULL FOREIGN KEY [CONSTRAINT test_cases_FK FOREIGN KEY (exercise_id) REFERENCES apalpro.exercises(id) ON DELETE RESTRICT ON UPDATE CASCADE]
+TEXT input_data
+TEXT expected_output
+BOOL is_visible DEFAULT FALSE
+
+TABLE assessment_results
+------------------------
+BIGINT id PRIMARY KEY NOT NULL AUTO_INCREMENT
+DATETIME created_at NOT NULL DEFAULT NOW()
+DATETIME modified_at
+BOOL status NOT NULL DEFAULT TRUE
+VARCHAR(64) name NOT NULL
+VARCHAR(512) description
+
+TABLE solution_proposals
+------------------------
+BIGINT id PRIMARY KEY NOT NULL AUTO_INCREMENT
+DATETIME created_at NOT NULL DEFAULT NOW()
+DATETIME modified_at
+BOOL status NOT NULL DEFAULT TRUE
+BIGINT user_id NOT NULL FOREIGN KEY [CONSTRAINT solution_proposals_FK FOREIGN KEY (user_id) REFERENCES apalpro.users(id) ON DELETE RESTRICT ON UPDATE CASCADE]
+MEDIUMTEXT code
+BIGINT assessment_result_id NOT NULL FOREIGN KEY [CONSTRAINT solution_proposals_FK_1 FOREIGN KEY (assessment_result_id) REFERENCES apalpro.assessment_results(id) ON DELETE RESTRICT ON UPDATE CASCADE]
+
+TABLE solution_proposal_test_case_assessments
+---------------------------------------------
+BIGINT id PRIMARY KEY NOT NULL AUTO_INCREMENT
+DATETIME created_at NOT NULL DEFAULT NOW()
+DATETIME modified_at
+BOOL status NOT NULL DEFAULT TRUE
+BIGINT solution_proposal_id NOT NULL FOREIGN KEY [CONSTRAINT solution_proposal_assessed_test_cases_FK FOREIGN KEY (solution_proposal_id) REFERENCES apalpro.solution_proposals(id) ON DELETE RESTRICT ON UPDATE CASCADE]
+BIGINT test_case_id NOT NULL FOREIGN KEY [CONSTRAINT solution_proposal_assessed_test_cases_FK_1 FOREIGN KEY (test_case_id) REFERENCES apalpro.test_cases(id) ON DELETE RESTRICT ON UPDATE CASCADE]
+TEXT output_data
+BIGINT assessment_result_id NOT NULL FOREIGN KEY [CONSTRAINT solution_proposal_assessed_test_cases_FK_2 FOREIGN KEY (assessment_result_id) REFERENCES apalpro.assessment_results(id) ON DELETE RESTRICT ON UPDATE CASCADE]
+
+
+Tablas de la base de datos apalpro: Formato MySQL
+-------------------------------------------------
+Ver creacion_tablas_bd.txt y creacion_tablas_bd.sql
+
+Inicialización de la base de datos apalpro: Formato MySQL
+-------------------------------------------------
+Ver inicializacion_tablas_bd.txt y inicializacion_tablas_bd.sql
+
+
+Configuración MySQL Server 8.0.32
+---------------------------------
+
+Conectividad:
+TCP/IP
+Port: 3306
+X Protocol Port: 33060
+Open Windows Firewall ports for network access: OK
+
+Use Strong Password Encryption for Authentication: OK
+MySQL Root Password: mysql
+
+MySQL User Accounts
+MySQL User Name / Host / User Role / Password / Confirm Password
+lniebles / <All Hosts (%)> / DB Admin / carbonol (Authentication: MySQL)
+
+Windows Service Name: MySQL80
+Start the MySQL Server at System Startup
+
+MySQL Server data directory - Consider the permissions of files and folders located at:
+C:\ProgramData\MySQL\MySQL Server 8.0\Data
+Chose: Yes, grant full access to the user running the Windows Service (if applicable) and the administrators group only. Other users and groups will not have access.
+
+Adding a Windows Firewall rule for MySQL80 on port 3306.
+
+Adding a Windows Firewall rule for MySQL80 on port 33060.
+
+Attempting to grant the required filesystem permissions to the 'NT AUTHORITY\NetworkService' account.
+
+Attempting to run MySQL Server with --initialize-insecure option...
+Starting process for MySQL Server 8.0.32...
+Starting process with command: C:\Program Files\MySQL\MySQL Server 8.0\bin\mysqld.exe --defaults-file="C:\ProgramData\MySQL\MySQL Server 8.0\my.ini" --console --initialize-insecure=on --lower-case-table-names=1...
+C:\Program Files\MySQL\MySQL Server 8.0\bin\mysqld.exe (mysqld 8.0.32) initializing of server in progress as process 4032
+InnoDB initialization has started.
+InnoDB initialization has ended.
+root@localhost is created with an empty password ! Please consider switching off the --initialize-insecure option.
+Process for mysqld, with ID 4032, was run successfully and exited with code 0.
+Successfully started process for MySQL Server 8.0.32.
+MySQL Server 8.0.32 intialized the database successfully.
+
+Attempting to update the permissions for the data folder and related server files...
+Inherited permissions have been converted to explicit permissions.
+Full control permissions granted to: Servicio de red.
+Full control permissions granted to: Administradores.
+Full control permissions granted to: CREATOR OWNER.
+Full control permissions granted to: SYSTEM.
+Access to the data directory is removed for the users group.
+Permissions for the data folder and related server files are updated correctly.
+
+Attempting to start service MySQL80...
+C:\Program Files\MySQL\MySQL Server 8.0\bin\mysqld.exe (mysqld 8.0.32) starting as process 396
+InnoDB initialization has started.....
+InnoDB initialization has ended.....
+CA certificate ca.pem is self signed.
+Channel mysql_main configured to support TLS. Encrypted connections are now supported for this channel..
+C:\Program Files\MySQL\MySQL Server 8.0\bin\mysqld.exe: ready for connections. Version: '8.0.32'  socket: ''  port: 3306  MySQL Community Server - GPL.
+X Plugin ready for connections. Bind-address: '::' port: 33060.
+Successfully started service MySQL80.
+Waiting until a connection to MySQL Server 8.0.32 can be established (with a maximum of 10 attempts)...
+Retry 1: Attempting to connect to Mysql@localhost:3306 with user root with no password...
+Successfully connected to MySQL Server 8.0.32.
+
+Attempting to update security settings.
+
+Attempting to Add New MySQL Users
+
+Attempting to verify command-line client shortcut.
+
+IMPORTANTE:
+https://stackoverflow.com/questions/26819931/do-mysql-connection-ids-always-increment-even-if-lower-connections-have-been-te
+
+To list all processes running on a MySQL instance state a query like this:
+SHOW PROCESSLIST
+Each Connection will have a representation here (inactive ones with Command column = Sleep).
+
+As to your question: No, Connection-ids will get re-used and will not increment forever. But you can't rely on the exact way they do so.
+
+Your MySQL connection id is <<put number here>>
+Server version: 8.0.32 MySQL Community Server - GPL

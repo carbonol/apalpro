@@ -1,0 +1,91 @@
+// CRUD: Login
+funcionesCRUD.login = async(req, res) => {
+    try {
+        // Paso 1: Buscar la contraseña del usuario dado (si este usuario existe).
+        // NOTA 1: Debe haber un parámetro llamado uname en el body del request (petición), que especifique el nombre de usuario.
+        const usuario = await usuarioModel.findOne({uname: req.body.uname});
+        if (!usuario) {
+            console.log(usuario);
+            res.json({
+                login: false,
+                msg: 'El usuario o la contraseña no son correctos.'
+            });
+        } else {
+            // Paso 2: Aplicar el comparador de bcrypt para ver si las contraseñas concuerdan.
+            // NOTA 2: Debe haber un parámetro llamado pwd en el body del request (petición), que especifique la contraseña ingresada.
+            resultado = await usuario.comparePwds(req.body.pwd);
+            if (resultado.err !== undefined && resultado.err !== null) {
+                // Hubo un error al hacer el hash
+                throw resultado.err; // Salta a la parte del catch del código.
+            } else {
+                if (resultado === true){
+                    const nombreCompleto = usuario.getFullName();
+                    let msgBienvenida;
+                    if (nombreCompleto !== "") {
+                        msgBienvenida = "¡Bienvenido(a) a DiskotecaStu, " + usuario.getFullName() + "!";
+                    } else {
+                        msgBienvenida = "¡Bienvenido(a) a DiskotecaStu!"
+                    }
+                    res.json({
+                        login: true,
+                        msg: msgBienvenida
+                    });
+                } else {
+                    res.json({
+                        login: false,
+                        msg: 'El usuario o la contraseña no son correctos.'
+                    });
+                }
+            }
+        }
+    } catch (error) {
+        console.log(error);
+        res.status(500).send('Error al iniciar sesión:\n' + error);
+    }
+};
+
+// CRUD: Login
+funcionesCRUD.loginAdmin = async(req, res) => {
+    try {
+        // Paso 1: Buscar la contraseña del usuario dado (si este usuario existe y es un administrador).
+        // NOTA 1: Debe haber un parámetro llamado uname en el body del request (petición), que especifique el nombre de usuario.
+        const usuario = await usuarioModel.findOne({uname: req.body.uname, admin: true});
+        if (!usuario) {
+            console.log(usuario);
+            res.json({
+                login: false,
+                msg: 'El usuario o la contraseña no son correctos.'
+            });
+        } else {
+            // Paso 2: Aplicar el comparador de bcrypt para ver si las contraseñas concuerdan.
+            // NOTA 2: Debe haber un parámetro llamado pwd en el body del request (petición), que especifique la contraseña ingresada.
+            resultado = await usuario.comparePwds(req.body.pwd);
+            if (resultado.err !== undefined && resultado.err !== null) {
+                // Hubo un error al hacer el hash
+                throw resultado.err; // Salta a la parte del catch del código.
+            } else {
+                if (resultado === true){
+                    const nombreCompleto = usuario.getFullName();
+                    let msgBienvenida;
+                    if (nombreCompleto !== "") {
+                        msgBienvenida = "¡Bienvenido(a) a DiskotecaStu, " + usuario.getFullName() + "!";
+                    } else {
+                        msgBienvenida = "¡Bienvenido(a) a DiskotecaStu!"
+                    }
+                    res.json({
+                        login: true,
+                        msg: msgBienvenida
+                    });
+                } else {
+                    res.json({
+                        login: false,
+                        msg: 'El usuario o la contraseña no son correctos.'
+                    });
+                }
+            }
+        }
+    } catch (error) {
+        console.log(error);
+        res.status(500).send('Error al iniciar sesión:\n' + error);
+    }
+};

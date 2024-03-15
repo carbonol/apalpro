@@ -1,0 +1,28 @@
+Aplicaciones
+------------
+
+VISIÓN PRELIMINAR: 23/01/2023
+
+Aplicación web: Backend, Frontend y Browser
+Aplicación de escritorio: Backend y UI
+
+1) Aplicación web
+Backend
+Servidor de recursos (e.g. REST): Páginas web, acceso a operaciones en el lado del servidor: Operaciones en base de datos, operaciones de creación de archivos .py (programas en Python 3), operaciones de ejecución y evaluación de programas en Python 3
+Java
+
+2) Aplicación web
+Frontend
+Cliente: Pide recursos al <<backend de la aplicación web>> para obtener la página principal index.html y hacer el renderizado el sitio web en cuanto a su estructura (HTML), aspecto visual (CSS) y comportamiento o interacción (JavaScript); con Angular, todo el sitio web se alberga en la página principal porque así es cómo funciona el marco de trabajo (framework) de Angular para hacer aplicaciones de una sola página (SPAs).
+Servidor: Ofrece recursos al <<navegador (browser)>> para mostrar al usuario la interfaz de usuario de un sitio web en cuanto a su estructura (HTML), aspecto visual (CSS) y comportamiento o interacción (JavaScript).
+Angular.io
+
+DOS ALTERNATIVAS DE INTERACCIÓN DEL USUARIO CON LA APLICACIÓN WEB (BACKEND):
+
+3) Navegador (Browser) => El usuario interactuará en esta plataforma
+Cliente: Pide recursos al <<frontend de la aplicación web>> para mostrar la interfaz de usuario de un sitio web en cuanto a su estructura (HTML), aspecto visual (CSS) y comportamiento o interacción (JavaScript), mediante el cual los usuarios pueden realizar otras actividades de interés a través de la interacción con la aplicación web (esta interacción no es usualmente percibida por los usuarios)
+e.g. Google Chrome, Mozilla Firefox, Microsoft Edge.
+
+4) Aplicación de escritorio => El usuario interactuará en esta plataforma
+Cliente: Pide recursos al <<backend de la aplicación web>> para ejecutar operaciones en base de datos, operaciones de creación de archivos .py (programas en Python 3), operaciones de ejecución y evaluación de programas en Python 3, necesarios para que los usuarios realicen actividades de interés.
+Java

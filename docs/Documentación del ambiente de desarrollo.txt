@@ -1,0 +1,1148 @@
+OS: Windows 10
+
+https://computerhoy.com/noticias/internet/que-es-comando-ping-como-funciona-42607
+https://support.microsoft.com/es-es/topic/c%C3%B3mo-usar-tracert-para-solucionar-problemas-de-tcp-ip-en-windows-e643d72b-2f4f-cdd6-09a0-fd2989c7ca8e
+
+####################################################################
+
+Backend: Java
+
+////////////////////////////////////////////////////////////////////
+
+IDE: Apache Netbeans 12.4 >> Apache Netbeans 16 (Actualización)
+Apache NetBeans Fits the Pieces Together
+Development Environment, Tooling Platform and Application Framework.
+
+The Apache NetBeans source code was donated by Oracle to the Apache Software Foundation in 2016. Since then many contributors have joined the project. Find out who is who, and how to become a committer.
+
+Cross Platform
+Apache NetBeans can be installed on all operating systems that support Java, i.e, Windows, Linux, Mac OSX and BSD. Write Once, Run Anywhere, applies to NetBeans too.
+
+Open Source:
+https://github.com/apache/netbeans/releases/tag/16
+https://github.com/apache/netbeans/archive/refs/tags/16.zip
+
+https://netbeans.apache.org/
+https://github.com/apache/netbeans-website/blob/master/netbeans.apache.org/src/content/index.adoc
+https://netbeans.apache.org/download/index.html
+https://www.apache.org/dyn/closer.cgi/netbeans/netbeans-installers/16/Apache-NetBeans-16-bin-windows-x64.exe
+
+https://netbeans.apache.org/help/index.html#documentation
+https://plugins.netbeans.apache.org/
+https://blogs.apache.org/netbeans/
+
+Pasos de instalación:
+
+Installers and Packages:
+Apache-NetBeans-16-bin-windows-x64.exe (SHA-512, PGP ASC)
+
+HTTP
+https://dlcdn.apache.org/netbeans/netbeans-installers/16/Apache-NetBeans-16-bin-windows-x64.exe
+
+Install:
+Base IDE
+Java SE
+Java EE
+HTML5 / JavaScript
+PHP
+
+Accept terms in the license agreement
+
+Install the Apache NetBeans IDE to:
+C:\Program Files\NetBeans-16
+
+JDK for the Apache NetBeans IDE:
+C:\Users\leand\jdk-16.0.1
+leand: nombre del usuario en Windows
+
+JDK 16.0.1
+
+Seleccionar Check for Updates
+
+Install
+
+Al abrir Apache NetBeans 16...
+
+Settings created by a previous version of the IDE were found on your system at
+C:\Users\leand\AppData\Roaming\NetBeans\12.4.
+Do you want to import them? Yes or No.
+
+RESPUESTA: NO.
+
+////////////////////////////////////////////////////////////////////
+
+Considere el uso de Spring Boot para realizar el Backend en Java
+(Pero SÓLO SI ES ESTRICTAMENTE NECESARIO)
+
+https://spring.io/projects/spring-boot
+https://start.spring.io/
+
+####################################################################
+
+Lenguaje de programación con el que se probará la solución: Python 3
+Python is powerful... and fast;
+plays well with others;
+runs everywhere;
+is friendly & easy to learn;
+is Open.
+
+https://www.python.org/
+https://www.python.org/downloads/
+
+https://www.python.org/doc/
+https://www.python.org/about/
+https://devguide.python.org/versions/#versions
+
+https://www.howtogeek.com/796841/check-python-version/
+
+En cmd:
+C:\Windows\system32>python --version
+Python 3.9.13
+
+Python 3.9.13 >> 3.11.1 (Actualización)
+
+https://www.python.org/downloads/release/python-3111/
+
+This is the first maintenance release of Python 3.11
+Python 3.11.1 is the newest major release of the Python programming language, and it contains many new features and optimizations.
+
+Pasos de instalación:
+
+Windows installer (64-bit)	Windows	Recommended	3a02deed11f7ff4dbc1188d201ad164a	25218984	SIG	CRT	SIG
+
+Instalador
+
+ELEGIR ESTE => Install Now
+C:\Users\leand\AppData\local\Programs\Python\Python311
+Includes IDLE, pip and documentation
+Creates shortcuts and file associations
+
+O
+
+Customize Installation
+Choose location and features
+>> Optional Features:
+Documentation: Installs the Python documentation files.
+pip: Installs pip, which can download and install other Python packages.
+tcl/tk and IDLE: Installs tkinter and the IDLE development environment.
+Python test suite: Installs the standard library test suite.
+py launcher for all users (requires admin privileges): Upgrades the local 'py' launcher from the previous version.
+
+Mantener Use admin privileges when installing py.exe
+Seleccionar Add Python.exe to PATH (MUY IMPORTANTE)
+
+Setup was successful.
+New to Python? Start with the online tutorial and documentation.
+At your terminal, type "py" to launch Python, or search for Python in your Start menu.
+See what's new in this release, or find more info about using Python on Windows.
+
+En cmd:
+C:\Windows\system32>python --version
+Python 3.11.1
+
+####################################################################
+
+Motor de bases de datos: MySQL
+The world's most popular open source database
+
+MySQL 8.0.26 : MySQL Server 8.0.26, MySQL Installer - Community (Instalado con MySQL Installer Community) >> MySQL 8.0.32 : MySQL Community Server 8.0.32 (Actualización)
+
+https://www.mysql.com/
+https://dev.mysql.com/downloads/
+https://dev.mysql.com/downloads/mysql/
+
+https://dev.mysql.com/doc/
+https://dev.mysql.com/
+
+https://www.scalahosting.com/kb/how-to-check-mysql-version-via-the-command-line/#
+
+mysql -V
+No funciona en cmd.
+
+MySQL 8.0 Command Line Client
+Quizás sí se pueda averiguar por aquí.
+Este pide una contraseña: ¿Cuál es?
+
+MUY IMPORTANTE:
+MySQL Root Password
+User: root
+Password: octasoft (Este es)
+User: leandroniebles
+Password: lniebles
+
+Enter password: ********
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 11
+Server version: 8.0.26 MySQL Community Server - GPL
+Copyright (c) 2000, 2021, Oracle and/or its affiliates.
+
+Connector/J
+Connector/Python
+
+Pasos de instalación:
+
+PRIMER PASO PARA ACTUALIZAR (SÓLO SE RECOMIENDA SI LOS DATOS ALMACENADOS NO IMPORTAN, O SI YA SE HIZO UN BACKUP DE LOS DATOS): 
+ELIMINAR ABSOLUTAMENTE TODO LO RELACIONADO CON MYSQL EN WINDOWS
+https://superuser.com/questions/225826/what-steps-do-i-need-to-take-to-completely-uninstall-mysql
+
+a) Ejecutar los desinstaladores de MySQL del Panel de Control
+b) Eliminar C:\Program Files\MySQL
+c) Eliminar C:\Program Files (x86)\MySQL => No existe. => OK
+d) Eliminar C:\ProgramData\MySQL
+e) Eliminar desde cualquiera de los directorios de usuario de AppData. Por ejemplo: C:\Users\leand\AppData\Roaming\MySQL
+C:\Users\leand\AppData\Roaming\MySQL => No existe. => OK
+f) Reinstalar MySQL
+
+MySQL Community (GPL) Downloads »
+MySQL Community Server
+MySQL Community Server 8.0.32
+Microsoft Windows
+MySQL Installer for Windows: Windows (x86, 32 & 64 bit), MySQL Installer MSI
+Windows (x86, 32-bit), MSI Installer
+(mysql-installer-community-8.0.32.0.msi)
+No thanks, just start my download.
+
+Please wait while Windows configures MySQL Installer - Community
+
+MySQL Installer 1.6
+
+Server only: Installs only the MySQL Server. This type should be used where you want to deploy a MySQL Server, but will not be developing MySQL applications.
+
+Execute >> Next
+
+Config Type: Development Computer
+
+Connectivity:
+TCP/IP: Checked
+Port: 3306
+X Protocol Port: 33060
+Open Windows Firewall ports for network access: Checked
+
+Next
+
+Use Strong Password Encryption for Authentication (Recommended)
+
+MySQL Root Password / Repeat Password: mysql
+
+MySQL User Accounts
+MySQL User Name / Host / User Role / Password / Confirm Password
+lniebles / <All Hosts (%)> / DB Admin / carbonol (Authentication: MySQL)
+
+Next
+
+Configure MySQL Server as a Windows Service
+
+Windows Service Name: MySQL80
+Start the MySQL Server at System Startup
+
+Run Windows Service as... Standard System Account
+
+Next
+
+Server File Permissions
+
+MySQL Installer can secure the server's data directory by updating the permissions of files and folders located at:
+
+C:\ProgramData\MySQL\MySQL Server 8.0\Data
+
+Do you want MySQL Installer to update the server file permissions for you?
+
+Options:
+a) Yes, grant full access to the user running the Windows Service (if applicable) and the administrators group only. Other users and groups will not have access. [DEFAULT] => Choose this one, I suppose. I don't know how access levels should be configured, anyway.
+b) Yes, but let me review and configure the level of access.
+c) No, I will manage the permissions after the server configuration.
+
+Next >> Execute : To apply the changes.
+
+LOG:
+
+Beginning configuration step: Writing configuration file
+
+Saving my.ini configuration file...
+Saved my.ini configuration file.
+Ended configuration step: Writing configuration file
+
+Beginning configuration step: Updating Windows Firewall rules
+
+Adding a Windows Firewall rule for MySQL80 on port 3306.
+Attempting to add a Windows Firewall rule with command: netsh.exe advfirewall firewall add rule name="Port 3306" protocol=TCP localport=3306 dir=in action=allow
+Aceptar
+
+
+Successfully added the Windows Firewall rule.
+Adding a Windows Firewall rule for MySQL80 on port 33060.
+Attempting to add a Windows Firewall rule with command: netsh.exe advfirewall firewall add rule name="Port 33060" protocol=TCP localport=33060 dir=in action=allow
+Aceptar
+
+
+Successfully added the Windows Firewall rule.
+Ended configuration step: Updating Windows Firewall rules
+
+Beginning configuration step: Adjusting Windows service
+
+Attempting to grant the required filesystem permissions to the 'NT AUTHORITY\NetworkService' account.
+Granted permissions to the data directory.
+Adding new service
+New service added
+Ended configuration step: Adjusting Windows service
+
+Beginning configuration step: Initializing database (may take a long time)
+
+Attempting to run MySQL Server with --initialize-insecure option...
+Starting process for MySQL Server 8.0.32...
+Starting process with command: C:\Program Files\MySQL\MySQL Server 8.0\bin\mysqld.exe --defaults-file="C:\ProgramData\MySQL\MySQL Server 8.0\my.ini" --console --initialize-insecure=on --lower-case-table-names=1...
+C:\Program Files\MySQL\MySQL Server 8.0\bin\mysqld.exe (mysqld 8.0.32) initializing of server in progress as process 4032
+InnoDB initialization has started.
+InnoDB initialization has ended.
+root@localhost is created with an empty password ! Please consider switching off the --initialize-insecure option.
+Process for mysqld, with ID 4032, was run successfully and exited with code 0.
+Successfully started process for MySQL Server 8.0.32.
+MySQL Server 8.0.32 intialized the database successfully.
+Ended configuration step: Initializing database (may take a long time)
+
+Beginning configuration step: Updating permissions for the data folder and related server files
+
+Attempting to update the permissions for the data folder and related server files...
+Inherited permissions have been converted to explicit permissions.
+Full control permissions granted to: Servicio de red.
+Full control permissions granted to: Administradores.
+Full control permissions granted to: CREATOR OWNER.
+Full control permissions granted to: SYSTEM.
+Access to the data directory is removed for the users group.
+Permissions for the data folder and related server files are updated correctly.
+Ended configuration step: Updating permissions for the data folder and related server files
+
+Beginning configuration step: Starting the server
+
+Attempting to start service MySQL80...
+C:\Program Files\MySQL\MySQL Server 8.0\bin\mysqld.exe (mysqld 8.0.32) starting as process 396
+InnoDB initialization has started.....
+InnoDB initialization has ended.....
+CA certificate ca.pem is self signed.
+Channel mysql_main configured to support TLS. Encrypted connections are now supported for this channel..
+C:\Program Files\MySQL\MySQL Server 8.0\bin\mysqld.exe: ready for connections. Version: '8.0.32'  socket: ''  port: 3306  MySQL Community Server - GPL.
+X Plugin ready for connections. Bind-address: '::' port: 33060.
+Successfully started service MySQL80.
+Waiting until a connection to MySQL Server 8.0.32 can be established (with a maximum of 10 attempts)...
+Retry 1: Attempting to connect to Mysql@localhost:3306 with user root with no password...
+Successfully connected to MySQL Server 8.0.32.
+Ended configuration step: Starting the server
+
+Beginning configuration step: Applying security settings
+
+Attempting to update security settings.
+Updated security settings.
+Ended configuration step: Applying security settings
+
+Beginning configuration step: Creating user accounts
+
+Attempting to Add New MySQL Users
+Added new users to the MySQL database successfully.
+Ended configuration step: Creating user accounts
+
+Beginning configuration step: Updating the Start menu link
+
+Attempting to verify command-line client shortcut.
+Verified command-line client shortcut.
+Verified command-line client shortcut.
+Ended configuration step: Updating the Start menu link
+
+END OF LOG.
+
+Finish >> Next
+
+LOG:
+
+1: Action 23:22:47: INSTALL. 
+1: 1: MySQL Server 8.0 2: {AF316C49-9FF0-401A-9EC3-3BD0AA7049FA} 
+1: Action 23:22:47: FindRelatedProducts. Searching for related applications
+1: Action 23:22:47: AppSearch. Searching for installed applications
+1: Action 23:22:47: DwordToNumber. 
+1: Action 23:22:47: LaunchConditions. Evaluating launch conditions
+1: Action 23:22:47: ValidateProductID. 
+1: Action 23:22:47: CostInitialize. Computing space requirements
+1: Action 23:22:47: FileCost. Computing space requirements
+1: Action 23:22:47: CostFinalize. Computing space requirements
+1: Action 23:22:47: MigrateFeatureStates. Migrating feature states from related applications
+1: Action 23:22:47: InstallValidate. Validating install
+1: Action 23:22:47: SaveTargetDir. 
+1: Action 23:22:47: InstallInitialize. 
+1: Action 23:22:47: SetQtRemoveService. 
+1: Action 23:22:47: RemoveExistingProducts. Removing applications
+1: Action 23:22:47: ProcessComponents. Updating component registration
+1: Action 23:22:48: GenerateScript. Generating script operations for action:
+1: Updating component registration
+1: Action 23:22:48: UnpublishFeatures. Unpublishing Product Features
+1: Action 23:22:48: RemoveRegistryValues. Removing system registry values
+1: Action 23:22:48: RemoveShortcuts. Removing shortcuts
+1: Action 23:22:48: RemoveFiles. Removing files
+1: Action 23:22:48: InstallFiles. Copying new files
+1: File: Copying new files,  Directory: ,  Size: 
+1: Action 23:22:48: CreateShortcuts. Creating shortcuts
+1: Shortcut: Creating shortcuts
+1: Action 23:22:48: WriteRegistryValues. Writing system registry values
+1: Key: Writing system registry values, Name: , Value: 
+1: Action 23:22:48: RegisterUser. Registering user
+1: Action 23:22:48: RegisterProduct. Registering product
+1: Registering product
+1: Action 23:22:48: PublishFeatures. Publishing Product Features
+1: Feature: Publishing Product Features
+1: Action 23:22:48: PublishProduct. Publishing product information
+1: Action 23:22:48: InstallFinalize. 
+1: Action 23:22:48: ProcessComponents. Updating component registration
+1: Action 23:22:48: InstallFiles. Copying new files
+1: File: comerr64.dll,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\bin\,  Size: 15872
+1: File: fido2.dll,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\bin\,  Size: 233472
+1: File: fido2.lib,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\bin\,  Size: 54418
+1: File: gssapi64.dll,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\bin\,  Size: 390144
+1: File: harness-library.dll,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\bin\,  Size: 793088
+1: File: ibd2sdi.exe,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\bin\,  Size: 6422120
+1: File: innochecksum.exe,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\bin\,  Size: 6411376
+1: File: jemalloc.dll,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\bin\,  Size: 269312
+1: File: k5sprt64.dll,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\bin\,  Size: 64000
+1: File: krb5_64.dll,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\bin\,  Size: 1223168
+1: File: krbcc64.dll,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\bin\,  Size: 112128
+1: File: libcrypto-1_1-x64.dll,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\bin\,  Size: 3438592
+1: File: libmecab.dll,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\bin\,  Size: 1839616
+1: File: libprotobuf.dll,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\bin\,  Size: 2844672
+1: File: libprotobuf.lib,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\bin\,  Size: 3976168
+1: File: libprotobuf-debug.dll,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\bin\,  Size: 6141440
+1: File: libprotobuf-lite.dll,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\bin\,  Size: 598528
+1: File: libprotobuf-lite.lib,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\bin\,  Size: 943314
+1: File: libprotobuf-lite-debug.dll,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\bin\,  Size: 1390080
+1: File: libsasl.dll,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\bin\,  Size: 110592
+1: File: libssl-1_1-x64.dll,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\bin\,  Size: 690176
+1: File: lz4_decompress.exe,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\bin\,  Size: 6353016
+1: File: my_print_defaults.exe,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\bin\,  Size: 6286464
+1: File: myisam_ftdump.exe,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\bin\,  Size: 6544504
+1: File: myisamchk.exe,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\bin\,  Size: 6661232
+1: File: myisamlog.exe,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\bin\,  Size: 6504560
+1: File: myisampack.exe,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\bin\,  Size: 6566000
+1: File: mysql.exe,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\bin\,  Size: 7324776
+1: File: mysql_config_editor.exe,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\bin\,  Size: 6300800
+1: File: mysql_migrate_keyring.exe,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\bin\,  Size: 7294088
+1: File: mysql_secure_installation.exe,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\bin\,  Size: 7199376
+1: File: mysql_ssl_rsa_setup.exe,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\bin\,  Size: 6325888
+1: File: mysql_tzinfo_to_sql.exe,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\bin\,  Size: 6233728
+1: File: mysql_upgrade.exe,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\bin\,  Size: 7298168
+1: File: mysqladmin.exe,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\bin\,  Size: 7212144
+1: File: mysqlbinlog.exe,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\bin\,  Size: 7565936
+1: File: mysqlcheck.exe,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\bin\,  Size: 7219312
+1: File: mysqld.exe,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\bin\,  Size: 54815848
+1: File: mysqld_multi.pl,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\bin\,  Size: 28776
+1: File: mysqldump.exe,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\bin\,  Size: 7284848
+1: File: mysqldumpslow.pl,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\bin\,  Size: 7881
+1: File: mysqlharness_stdx.dll,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\bin\,  Size: 42112
+1: File: mysqlharness_tls.dll,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\bin\,  Size: 66680
+1: File: mysqlimport.exe,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\bin\,  Size: 7203952
+1: File: mysqlpump.exe,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\bin\,  Size: 7719536
+1: File: mysqlrouter.exe,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\bin\,  Size: 7732848
+1: File: mysqlrouter_connection_pool.dll,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\bin\,  Size: 69776
+1: File: mysqlrouter_destination_status.dll,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\bin\,  Size: 97944
+1: File: mysqlrouter_http.dll,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\bin\,  Size: 271992
+1: File: mysqlrouter_http_auth_backend.dll,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\bin\,  Size: 115352
+1: File: mysqlrouter_http_auth_realm.dll,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\bin\,  Size: 38544
+1: File: mysqlrouter_io_component.dll,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\bin\,  Size: 6273672
+1: File: mysqlrouter_keyring.exe,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\bin\,  Size: 6313088
+1: File: mysqlrouter_lib.dll,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\bin\,  Size: 7501944
+1: File: mysqlrouter_metadata_cache.dll,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\bin\,  Size: 8063120
+1: File: mysqlrouter_passwd.exe,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\bin\,  Size: 6284928
+1: File: mysqlrouter_plugin_info.exe,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\bin\,  Size: 6269064
+1: File: mysqlrouter_routing.dll,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\bin\,  Size: 7260800
+1: File: mysqlshow.exe,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\bin\,  Size: 7201904
+1: File: mysqlslap.exe,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\bin\,  Size: 7221360
+1: File: perror.exe,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\bin\,  Size: 7163496
+1: File: saslSCRAM.dll,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\bin\,  Size: 47104
+1: File: xpprof64.dll,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\bin\,  Size: 48128
+1: File: zlib_decompress.exe,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\bin\,  Size: 6253176
+1: File: INFO_BIN,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\docs\,  Size: 10636
+1: File: INFO_SRC,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\docs\,  Size: 188
+1: File: sample_mysqlrouter.conf,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\docs\,  Size: 2213
+1: File: mysqlrouter.conf.sample,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\etc\,  Size: 1672
+1: File: errmsg.h,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\include\,  Size: 5685
+1: File: field_types.h,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\include\,  Size: 3030
+1: File: my_command.h,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\include\,  Size: 4407
+1: File: my_compress.h,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\include\,  Size: 3646
+1: File: my_list.h,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\include\,  Size: 2069
+1: File: mysql.h,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\include\,  Size: 33483
+1: File: client_plugin.h,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\include\mysql\,  Size: 8284
+1: File: mysql_com.h,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\include\,  Size: 37337
+1: File: plugin_auth_common.h,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\include\mysql\,  Size: 6866
+1: File: mysql_time.h,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\include\,  Size: 3554
+1: File: udf_registration_types.h,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\include\mysql\,  Size: 3827
+1: File: mysql_version.h,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\include\,  Size: 1120
+1: File: mysqld_error.h,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\include\,  Size: 263399
+1: File: mysqlx_ername.h,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\include\,  Size: 7304
+1: File: mysqlx_error.h,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\include\,  Size: 4211
+1: File: mysqlx_version.h,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\include\,  Size: 1840
+1: File: applink.c,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\include\openssl\,  Size: 3508
+1: File: connection_pool.dll,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\lib\,  Size: 35840
+1: File: destination_status.dll,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\lib\,  Size: 31232
+1: File: http_auth_backend.dll,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\lib\,  Size: 41984
+1: File: http_auth_realm.dll,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\lib\,  Size: 45056
+1: File: http_server.dll,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\lib\,  Size: 6396416
+1: File: io.dll,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\lib\,  Size: 6234112
+1: File: keepalive.dll,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\lib\,  Size: 19456
+1: File: libmysql.dll,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\lib\,  Size: 7179264
+1: File: libmysql.lib,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\lib\,  Size: 30676
+1: File: libprotobuf-lite.dll,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\lib\,  Size: 598528
+1: File: libprotobuf-lite.lib,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\lib\,  Size: 943314
+1: File: char.bin,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\lib\mecab\dic\ipadic_euc-jp\,  Size: 262496
+1: File: dicrc,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\lib\mecab\dic\ipadic_euc-jp\,  Size: 693
+1: File: left-id.def,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\lib\mecab\dic\ipadic_euc-jp\,  Size: 55910
+1: File: matrix.bin,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\lib\mecab\dic\ipadic_euc-jp\,  Size: 3463716
+1: File: pos-id.def,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\lib\mecab\dic\ipadic_euc-jp\,  Size: 1477
+1: File: rewrite.def,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\lib\mecab\dic\ipadic_euc-jp\,  Size: 6241
+1: File: right-id.def,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\lib\mecab\dic\ipadic_euc-jp\,  Size: 55910
+1: File: sys.dic,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\lib\mecab\dic\ipadic_euc-jp\,  Size: 37779919
+1: File: unk.dic,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\lib\mecab\dic\ipadic_euc-jp\,  Size: 5409
+1: File: char.bin,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\lib\mecab\dic\ipadic_sjis\,  Size: 262496
+1: File: dicrc,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\lib\mecab\dic\ipadic_sjis\,  Size: 693
+1: File: left-id.def,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\lib\mecab\dic\ipadic_sjis\,  Size: 55910
+1: File: matrix.bin,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\lib\mecab\dic\ipadic_sjis\,  Size: 3463716
+1: File: pos-id.def,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\lib\mecab\dic\ipadic_sjis\,  Size: 1477
+1: File: rewrite.def,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\lib\mecab\dic\ipadic_sjis\,  Size: 6241
+1: File: right-id.def,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\lib\mecab\dic\ipadic_sjis\,  Size: 55910
+1: File: sys.dic,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\lib\mecab\dic\ipadic_sjis\,  Size: 37635899
+1: File: unk.dic,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\lib\mecab\dic\ipadic_sjis\,  Size: 5409
+1: File: char.bin,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\lib\mecab\dic\ipadic_utf-8\,  Size: 262496
+1: File: dicrc,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\lib\mecab\dic\ipadic_utf-8\,  Size: 693
+1: File: left-id.def,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\lib\mecab\dic\ipadic_utf-8\,  Size: 55910
+1: File: matrix.bin,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\lib\mecab\dic\ipadic_utf-8\,  Size: 3463716
+1: File: pos-id.def,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\lib\mecab\dic\ipadic_utf-8\,  Size: 1477
+1: File: rewrite.def,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\lib\mecab\dic\ipadic_utf-8\,  Size: 6241
+1: File: right-id.def,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\lib\mecab\dic\ipadic_utf-8\,  Size: 55910
+1: File: sys.dic,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\lib\mecab\dic\ipadic_utf-8\,  Size: 49199027
+1: File: unk.dic,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\lib\mecab\dic\ipadic_utf-8\,  Size: 5690
+1: File: mecabrc,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\lib\mecab\etc\,  Size: 1382
+1: File: metadata_cache.dll,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\lib\,  Size: 7211520
+1: File: mysqlclient.lib,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\lib\,  Size: 43873982
+1: File: mysqlharness_stdx.lib,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\lib\,  Size: 10392
+1: File: mysqlharness_tls.lib,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\lib\,  Size: 22722
+1: File: mysqlrouter_connection_pool.lib,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\lib\,  Size: 27562
+1: File: mysqlrouter_destination_status.lib,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\lib\,  Size: 8430
+1: File: mysqlrouter_http.lib,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\lib\,  Size: 45804
+1: File: mysqlrouter_http_auth_backend.lib,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\lib\,  Size: 48066
+1: File: mysqlrouter_http_auth_realm.lib,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\lib\,  Size: 11332
+1: File: mysqlrouter_io_component.lib,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\lib\,  Size: 12642
+1: File: mysqlrouter_lib.lib,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\lib\,  Size: 107282
+1: File: mysqlrouter_metadata_cache.lib,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\lib\,  Size: 110866
+1: File: mysqlrouter_mysqlxmessages.dll,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\lib\,  Size: 150016
+1: File: mysqlrouter_mysqlxmessages.lib,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\lib\,  Size: 2158
+1: File: mysqlrouter_routing.lib,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\lib\,  Size: 50172
+1: File: adt_null.dll,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\lib\plugin\,  Size: 26112
+1: File: authentication_fido_client.dll,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\lib\plugin\,  Size: 31232
+1: File: authentication_kerberos_client.dll,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\lib\plugin\,  Size: 6258688
+1: File: authentication_ldap_sasl_client.dll,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\lib\plugin\,  Size: 44032
+1: File: authentication_oci_client.dll,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\lib\plugin\,  Size: 107008
+1: File: component_audit_api_message_emit.dll,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\lib\plugin\,  Size: 24576
+1: File: component_keyring_file.dll,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\lib\plugin\,  Size: 1195008
+1: File: component_log_filter_dragnet.dll,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\lib\plugin\,  Size: 32256
+1: File: component_log_sink_json.dll,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\lib\plugin\,  Size: 36352
+1: File: component_log_sink_syseventlog.dll,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\lib\plugin\,  Size: 17920
+1: File: component_mysqlbackup.dll,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\lib\plugin\,  Size: 44032
+1: File: component_query_attributes.dll,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\lib\plugin\,  Size: 14336
+1: File: component_reference_cache.dll,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\lib\plugin\,  Size: 45568
+1: File: component_validate_password.dll,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\lib\plugin\,  Size: 60416
+1: File: connection_control.dll,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\lib\plugin\,  Size: 45568
+1: File: ddl_rewriter.dll,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\lib\plugin\,  Size: 71168
+1: File: group_replication.dll,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\lib\plugin\,  Size: 1937408
+1: File: ha_example.dll,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\lib\plugin\,  Size: 30720
+1: File: ha_mock.dll,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\lib\plugin\,  Size: 40448
+1: File: keyring_file.dll,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\lib\plugin\,  Size: 94208
+1: File: keyring_udf.dll,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\lib\plugin\,  Size: 26624
+1: File: libpluginmecab.dll,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\lib\plugin\,  Size: 30720
+1: File: locking_service.dll,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\lib\plugin\,  Size: 13824
+1: File: mypluglib.dll,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\lib\plugin\,  Size: 14336
+1: File: mysql_clone.dll,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\lib\plugin\,  Size: 141824
+1: File: mysql_no_login.dll,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\lib\plugin\,  Size: 12288
+1: File: rewrite_example.dll,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\lib\plugin\,  Size: 13824
+1: File: rewriter.dll,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\lib\plugin\,  Size: 59904
+1: File: semisync_master.dll,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\lib\plugin\,  Size: 79360
+1: File: semisync_replica.dll,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\lib\plugin\,  Size: 35328
+1: File: semisync_slave.dll,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\lib\plugin\,  Size: 35840
+1: File: semisync_source.dll,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\lib\plugin\,  Size: 78336
+1: File: validate_password.dll,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\lib\plugin\,  Size: 47616
+1: File: version_token.dll,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\lib\plugin\,  Size: 50688
+1: File: burmesedict.dict,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\lib\private\icudt69l\brkitr\,  Size: 254438
+1: File: char.brk,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\lib\private\icudt69l\brkitr\,  Size: 13680
+1: File: cjdict.dict,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\lib\private\icudt69l\brkitr\,  Size: 2003566
+1: File: de.res,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\lib\private\icudt69l\brkitr\,  Size: 2988
+1: File: el.res,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\lib\private\icudt69l\brkitr\,  Size: 152
+1: File: en.res,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\lib\private\icudt69l\brkitr\,  Size: 1764
+1: File: en_US.res,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\lib\private\icudt69l\brkitr\,  Size: 68
+1: File: en_US_POSIX.res,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\lib\private\icudt69l\brkitr\,  Size: 156
+1: File: es.res,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\lib\private\icudt69l\brkitr\,  Size: 2168
+1: File: fr.res,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\lib\private\icudt69l\brkitr\,  Size: 1200
+1: File: it.res,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\lib\private\icudt69l\brkitr\,  Size: 676
+1: File: ja.res,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\lib\private\icudt69l\brkitr\,  Size: 304
+1: File: khmerdict.dict,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\lib\private\icudt69l\brkitr\,  Size: 445542
+1: File: laodict.dict,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\lib\private\icudt69l\brkitr\,  Size: 52102
+1: File: line.brk,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\lib\private\icudt69l\brkitr\,  Size: 24080
+1: File: line_cj.brk,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\lib\private\icudt69l\brkitr\,  Size: 24112
+1: File: line_loose.brk,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\lib\private\icudt69l\brkitr\,  Size: 24232
+1: File: line_loose_cj.brk,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\lib\private\icudt69l\brkitr\,  Size: 25096
+1: File: line_normal.brk,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\lib\private\icudt69l\brkitr\,  Size: 23904
+1: File: line_normal_cj.brk,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\lib\private\icudt69l\brkitr\,  Size: 24304
+1: File: pt.res,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\lib\private\icudt69l\brkitr\,  Size: 2284
+1: File: res_index.res,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\lib\private\icudt69l\brkitr\,  Size: 220
+1: File: root.res,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\lib\private\icudt69l\brkitr\,  Size: 644
+1: File: ru.res,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\lib\private\icudt69l\brkitr\,  Size: 332
+1: File: sent.brk,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\lib\private\icudt69l\brkitr\,  Size: 19216
+1: File: sent_el.brk,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\lib\private\icudt69l\brkitr\,  Size: 19232
+1: File: thaidict.dict,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\lib\private\icudt69l\brkitr\,  Size: 126135
+1: File: title.brk,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\lib\private\icudt69l\brkitr\,  Size: 11824
+1: File: word.brk,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\lib\private\icudt69l\brkitr\,  Size: 22232
+1: File: word_POSIX.brk,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\lib\private\icudt69l\brkitr\,  Size: 22240
+1: File: zh.res,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\lib\private\icudt69l\brkitr\,  Size: 272
+1: File: zh_Hant.res,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\lib\private\icudt69l\brkitr\,  Size: 272
+1: File: unames.icu,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\lib\private\icudt69l\,  Size: 283936
+1: File: rest_api.dll,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\lib\,  Size: 142336
+1: File: rest_connection_pool.dll,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\lib\,  Size: 94208
+1: File: rest_metadata_cache.dll,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\lib\,  Size: 108032
+1: File: rest_router.dll,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\lib\,  Size: 80384
+1: File: rest_routing.dll,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\lib\,  Size: 128000
+1: File: router_openssl.dll,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\lib\,  Size: 14848
+1: File: router_protobuf.dll,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\lib\,  Size: 11776
+1: File: routing.dll,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\lib\,  Size: 100864
+1: File: LICENSE,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\,  Size: 283374
+1: File: LICENSE.router,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\,  Size: 121462
+1: File: README,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\,  Size: 666
+1: File: README.router,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\,  Size: 679
+1: File: errmsg.sys,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\share\bulgarian\,  Size: 379692
+1: File: armscii8.xml,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\share\charsets\,  Size: 5961
+1: File: ascii.xml,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\share\charsets\,  Size: 5947
+1: File: cp1250.xml,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\share\charsets\,  Size: 8676
+1: File: cp1251.xml,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\share\charsets\,  Size: 8762
+1: File: cp1256.xml,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\share\charsets\,  Size: 6010
+1: File: cp1257.xml,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\share\charsets\,  Size: 9343
+1: File: cp850.xml,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\share\charsets\,  Size: 5947
+1: File: cp852.xml,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\share\charsets\,  Size: 5963
+1: File: cp866.xml,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\share\charsets\,  Size: 6054
+1: File: dec8.xml,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\share\charsets\,  Size: 6970
+1: File: geostd8.xml,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\share\charsets\,  Size: 5957
+1: File: greek.xml,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\share\charsets\,  Size: 6169
+1: File: hebrew.xml,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\share\charsets\,  Size: 5952
+1: File: hp8.xml,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\share\charsets\,  Size: 5943
+1: File: Index.xml,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\share\charsets\,  Size: 19475
+1: File: keybcs2.xml,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\share\charsets\,  Size: 5970
+1: File: koi8r.xml,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\share\charsets\,  Size: 5951
+1: File: koi8u.xml,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\share\charsets\,  Size: 6973
+1: File: latin1.xml,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\share\charsets\,  Size: 10251
+1: File: latin2.xml,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\share\charsets\,  Size: 7673
+1: File: latin5.xml,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\share\charsets\,  Size: 5950
+1: File: latin7.xml,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\share\charsets\,  Size: 7879
+1: File: macce.xml,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\share\charsets\,  Size: 8488
+1: File: macroman.xml,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\share\charsets\,  Size: 8499
+1: File: README,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\share\charsets\,  Size: 1749
+1: File: swe7.xml,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\share\charsets\,  Size: 6971
+1: File: errmsg.sys,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\share\czech\,  Size: 379614
+1: File: errmsg.sys,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\share\danish\,  Size: 379614
+1: File: dictionary.txt,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\share\,  Size: 25575
+1: File: errmsg.sys,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\share\dutch\,  Size: 380634
+1: File: errmsg.sys,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\share\english\,  Size: 378855
+1: File: errmsg.sys,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\share\estonian\,  Size: 379119
+1: File: errmsg.sys,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\share\french\,  Size: 380262
+1: File: errmsg.sys,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\share\german\,  Size: 386507
+1: File: errmsg.sys,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\share\greek\,  Size: 385646
+1: File: errmsg.sys,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\share\hungarian\,  Size: 379496
+1: File: errmsg.sys,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\share\italian\,  Size: 380625
+1: File: errmsg.sys,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\share\japanese\,  Size: 386301
+1: File: errmsg.sys,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\share\korean\,  Size: 381895
+1: File: messages_to_clients.txt,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\share\,  Size: 628651
+1: File: messages_to_error_log.txt,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\share\,  Size: 385277
+1: File: errmsg.sys,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\share\norwegian\,  Size: 378925
+1: File: errmsg.sys,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\share\norwegian-ny\,  Size: 378978
+1: File: errmsg.sys,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\share\polish\,  Size: 379784
+1: File: errmsg.sys,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\share\portuguese\,  Size: 381815
+1: File: errmsg.sys,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\share\romanian\,  Size: 380567
+1: File: errmsg.sys,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\share\russian\,  Size: 394081
+1: File: errmsg.sys,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\share\serbian\,  Size: 381236
+1: File: errmsg.sys,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\share\slovak\,  Size: 379381
+1: File: errmsg.sys,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\share\spanish\,  Size: 380509
+1: File: errmsg.sys,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\share\swedish\,  Size: 379708
+1: File: errmsg.sys,  Directory: C:\Program Files\MySQL\MySQL Server 8.0\share\ukrainian\,  Size: 388704
+1: Action 23:23:08: CreateShortcuts. Creating shortcuts
+1: Shortcut: icon.ico
+1: Shortcut: Icon.MysqlCmdShell
+1: Shortcut: rpxm3ds_|MySQL 8.0 Command Line Client
+1: Shortcut: 7ejegqmo|MySQL 8.0 Command Line Client - Unicode
+1: Action 23:23:08: WriteRegistryValues. Writing system registry values
+1: Key: \SOFTWARE\MySQL AB\MySQL Server 8.0, Name: Location, Value: C:\Program Files\MySQL\MySQL Server 8.0\
+1: Key: \SOFTWARE\MySQL AB\MySQL Server 8.0, Name: Version, Value: 8.0.32
+1: Key: \SOFTWARE\MySQL AB\MySQL Server 8.0, Name: DataLocation, Value: C:\ProgramData\MySQL\MySQL Server 8.0
+1: Key: \SOFTWARE\MySQL AB\MySQL Server 8.0, Name: , Value: 
+1: Key: \Console\MySQL 8.0 Command Line Client - Unicode, Name: FaceName, Value: Lucida Console
+1: Key: \Console\MySQL 8.0 Command Line Client - Unicode, Name: FontWeight, Value: #400
+1: Key: \Console\MySQL 8.0 Command Line Client - Unicode, Name: , Value: 
+1: Key: \Software\MySQL AB\MySQL Server 8.0, Name: installed, Value: #1
+1: Action 23:23:08: RegisterProduct. Registering product
+1: {AF316C49-9FF0-401A-9EC3-3BD0AA7049FA}
+1: Action 23:23:08: PublishFeatures. Publishing Product Features
+1: Feature: RegKeys
+1: Feature: Client
+1: Feature: MYSQLSERVER
+1: Feature: DEVEL
+1: Feature: DOCUMENTATION
+1: Feature: INFO
+1: Feature: Readme
+1: Feature: ALWAYSINSTALL
+1: Feature: Router
+1: Feature: Server_Scripts
+1: Feature: MISC
+1: Feature: ProgramMenu
+1: Action 23:23:08: PublishProduct. Publishing product information
+1: Action 23:23:09: RollbackCleanup. Removing backup files
+1: 1: MySQL Server 8.0 2: {AF316C49-9FF0-401A-9EC3-3BD0AA7049FA} 3: 1 
+1: The action 'Install' for product 'MySQL Server 8.0.32' completed successfully.
+
+END OF LOG.
+
+Finish.
+
+Enter password: *****
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 12
+Server version: 8.0.32 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2023, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql>
+
+####################################################################
+
+DBeaver: Asistente para crear bases de datos MySQL
+
+https://dbeaver.io/
+
+Free multi-platform database tool for developers, database administrators, analysts and all people who need to work with databases. Supports all popular databases: MySQL, PostgreSQL, SQLite, Oracle, DB2, SQL Server, Sybase, MS Access, Teradata, Firebird, Apache Hive, Phoenix, Presto, etc.
+
+DBeaver is a desktop client.
+If you are looking for a web-based database management tool - check our new product: CloudBeaver.
+It is based on DBeaver platform and thus supports any database and most of DBeaver features.
+
+https://github.com/dbeaver/dbeaver
+https://github.com/dbeaver/dbeaver/wiki
+
+DBeaver 21.2.3.202110151816 >> DBeaver 22.3.3 (23.01.2023) (Actualización)
+
+Siguiente >> Acepto
+
+For anyone who uses this computer (all users)
+
+Siguiente
+
+Siguiente >> Acepto
+
+Instalar: DBeaver Community and Include Java
+
+Directorio de destino:
+C:\Program Files\DBeaver
+
+Nombre de carpeta de Menú Inicio:
+DBeaver Community
+
+Create Desktop Shortcut
+
+Terminar
+
+Download MySQL driver files
+MySQL driver files are missing. They can be downloaded automatically.
+
+https://www.gnu.org/licenses/old-licenses/lgpl-2.0.txt
+
+####################################################################
+
+Frontend: Angular
+Angular is an application-design framework and development platform for creating efficient and sophisticated single-page apps (SPAs).
+
+Angular CLI: 13.0.1 >> Angular v15 (15.1.2)
+
+https://angular.io/
+https://angular.io/cli
+https://angular.io/docs
+https://angular.io/resources?category=community
+https://blog.angular.io/?gi=c3d792913b37
+
+https://angular.io/guide/setup-local
+
+Angular CLI
+https://angular.io/cli
+
+https://medium.com/bb-tutorials-and-thoughts
+https://medium.com/bb-tutorials-and-thoughts/how-to-develop-and-build-angular-app-with-java-backend-87fb603c6e17
+
+https://github.com/bbachi/angular-java-example
+
+https://www.baeldung.com/spring-boot-angular-web
+
+To install Angular on your local system, you need the following:
+REQUIREMENTS	DETAILS
+Node.js	
+Angular requires an active LTS or maintenance LTS version of Node.js.
+For information about specific version requirements, see the engines key in the package.json file.
+https://unpkg.com/browse/@angular/core@15.1.1/package.json
+For more information on installing Node.js, see nodejs.org. If you are unsure what version of Node.js runs on your system, run node -v in a terminal window.
+
+https://nodejs.org/en/
+
+npm package manager	
+Angular, the Angular CLI, and Angular applications depend on npm packages for many features and functions. To download and install npm packages, you need an npm package manager. This guide uses the npm client command line interface, which is installed with Node.js by default. To check that you have the npm client installed, run npm -v in a terminal window.
+
+Entonces, para poder usar Angular, se requiere necesariamente actualizar Node.js y npm.
+
+How can I check angular CLI version?
+To Check Angular CLI version use ng --version or ng v or npm list -global --depth 0 commands. ng --version command returns the details of version of Angular CLI installed and in addition to that version of Angular development packages like @angular-devkit/architect,rxjs etc.. as shown below.
+
+C:\Windows\system32>ng --version
+
+     _                      _                 ____ _     ___
+    / \   _ __   __ _ _   _| | __ _ _ __     / ___| |   |_ _|
+   / △ \ | '_ \ / _` | | | | |/ _` | '__|   | |   | |    | |
+  / ___ \| | | | (_| | |_| | | (_| | |      | |___| |___ | |
+ /_/   \_\_| |_|\__, |\__,_|_|\__,_|_|       \____|_____|___|
+                |___/
+
+
+Angular CLI: 13.0.1
+Node: 18.13.0 (Unsupported)
+Package Manager: npm 9.3.1
+OS: win32 x64
+
+Angular:
+...
+
+Package                      Version
+------------------------------------------------------
+@angular-devkit/architect    0.1300.1 (cli-only)
+@angular-devkit/core         13.0.1 (cli-only)
+@angular-devkit/schematics   13.0.1 (cli-only)
+@schematics/angular          13.0.1 (cli-only)
+
+Warning: The current version of Node (18.13.0) is not supported by Angular.
+
+C:\Windows\system32>
+
+Pasos de instalación:
+
+Si ya antes se tenía Angular CLI, y se actualizó Node.js, entonces hay que revisar la versión más reciente de Angular CLI, e instalarlo en Node.js mediante npm.
+
+https://stackoverflow.com/questions/73996179/node-18-not-supported-by-angular-14
+
+Update:
+
+Node 18 support has landed with Angular 15.
+
+The answer by Clydin from the Angular team:
+
+Angular officially supports all Node.js versions currently in active LTS or maintenance LTS (https://angular.io/guide/setup-local#prerequisites). From the current Node.js release calendar (https://nodejs.org/en/about/releases/), Node.js v18 will enter LTS on 2022-10-25. Based on the Angular release cadence, Node.js v18 would then be officially supported by Angular in v15 at the earliest. Node.js v14 will reach its end-of-life on 2023-04-30 and would then no longer be supported by Angular v16 at the earliest.
+
+So support for Node 18 is expected for Angular 15.
+
+For more about the supported version of node across different versions of Angular you can refer to this table.
+
+https://gist.github.com/LayZeeDK/c822cc812f75bb07b7c55d07ba2719b3
+
+npm install -g @angular/cli
+
+On Windows client computers, the execution of PowerShell scripts is disabled by default. To allow the execution of PowerShell scripts, which is needed for npm global binaries, you must set the following execution policy:
+
+content_copy
+Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy RemoteSigned
+Carefully read the message displayed after executing the command and follow the instructions. 
+Make sure you understand the implications of setting an execution policy.
+
+https://www.npmjs.com/package/@angular/cli
+15.1.2 • Public • Published 5 days ago
+
+npm install -g @angular/cli
+
+C:\Windows\system32>npm install -g @angular/cli
+npm WARN deprecated @npmcli/move-file@2.0.1: This functionality has been moved to @npmcli/fs
+
+added 45 packages, removed 16 packages, and changed 179 packages in 3m
+
+26 packages are looking for funding
+  run `npm fund` for details
+
+C:\Windows\system32>
+
+npm install -g @angular/cli@15.1.2
+
+C:\Windows\system32>npm install -g @angular/cli@15.1.2
+npm WARN deprecated @npmcli/move-file@2.0.1: This functionality has been moved to @npmcli/fs
+
+changed 224 packages in 2m
+
+26 packages are looking for funding
+  run `npm fund` for details
+
+C:\Windows\system32>
+
+C:\Windows\system32>ng --version
+Error: You need to specify a command before moving on. Use '--help' to view the available commands.
+
+C:\Windows\system32>ng v
+? Would you like to share pseudonymous usage data about this project with the Angular Team
+at Google under Google's Privacy Policy at https://policies.google.com/privacy. For more
+details and how to change this setting, see https://angular.io/analytics. (y/N)
+
+C:\Windows\system32>ng v
+? Would you like to share pseudonymous usage data about this project with the Angular Team
+at Google under Google's Privacy Policy at https://policies.google.com/privacy. For more
+details and how to change this setting, see https://angular.io/analytics. No
+Global setting: disabled
+Local setting: No local workspace configuration file.
+Effective status: disabled
+
+     _                      _                 ____ _     ___
+    / \   _ __   __ _ _   _| | __ _ _ __     / ___| |   |_ _|
+   / △ \ | '_ \ / _` | | | | |/ _` | '__|   | |   | |    | |
+  / ___ \| | | | (_| | |_| | | (_| | |      | |___| |___ | |
+ /_/   \_\_| |_|\__, |\__,_|_|\__,_|_|       \____|_____|___|
+                |___/
+
+
+Angular CLI: 15.1.2
+Node: 18.13.0
+Package Manager: npm 9.3.1
+OS: win32 x64
+
+Angular:
+...
+
+Package                      Version
+------------------------------------------------------
+@angular-devkit/architect    0.1501.2 (cli-only)
+@angular-devkit/core         15.1.2 (cli-only)
+@angular-devkit/schematics   15.1.2 (cli-only)
+@schematics/angular          15.1.2 (cli-only)
+
+
+C:\Windows\system32>
+
+////////////////////////////////////////////////////////////////////
+
+Node.js y npm
+
+https://nodejs.org/en/
+
+https://treehouse.github.io/installation-guides/windows/node-windows.html#:~:text=To%20see%20if%20Node%20is,10.35%20.
+
+En cmd:
+C:\Windows\system32>node -v
+v16.13.0
+
+C:\Windows\system32>npm -v
+8.1.3
+
+Node.js: v16.13.0 >> 18.13.0 LTS
+npm: 8.1.3 >> 9.3.1
+
+https://nodejs.org/en/download/
+https://nodejs.org/en/docs/
+https://nodejs.org/dist/latest-v18.x/docs/api/
+https://openjsf.org/certification/
+
+Pasos de instalación de Node.js:
+
+SI SE DIJO QUE SÍ A
+Automatically install the necessary tools. Note that this will also install Chocolatey. The script will pop-up in a new window after the installation completes
+DURANTE EL INSTALADOR DE NODE.JS,
+ENTONCES:
+1) Press [Windows]+X then press the a key (this will open Windows PowerShell with Admin privileges)
+Copy the line below and paste it in to the shell and press enter
+choco uninstall kb2919355 kb2919442 kb2999226 kb3033929 kb3035131 python3 dotnetfx vcredist140 chocolatey-windowsupdate.extension chocolatey-visualstudio.extension chocolatey-dotnetfx.extension chocolatey-core.extension chocolatey -y; choco uninstall visualstudio2019-workload-vctools visualstudio2019buildtools visualstudio-installer -n -y
+Reboot your pc, now everything should've been uninstalled that was installed during the Node installation.
+There are probably small remnants left, such as Chocolatey itself and some entries might remain in the Programs and Features. That's because Chocolatey doesn't update those via the registry after any successful uninstalls.
+2) https://docs.chocolatey.org/en-us/choco/uninstallation#
+Most of Chocolatey is contained in C:\ProgramData\chocolatey or whatever $env:ChocolateyInstall evaluates to. You can simply delete that folder.
+NOTE
+You might first back up the sub-folders lib and bin just in case you find undesirable results in removing Chocolatey. Bear in mind not every Chocolatey package is an installer package, there may be some non-installed applications contained in these subfolders that could potentially go missing. Having a backup will allow you to test that aspect out.
+Environment Variables
+There are some environment variables that need to be adjusted or removed.
+ChocolateyInstall
+ChocolateyToolsLocation
+ChocolateyLastPathUpdate
+PATH (will need updated to remove)
+3) Reinstalar Node.js: Remove, and then, Install.
+
+Espera un poco...
+
+Next
+Accept terms >> Next
+
+Install Node.js to:
+C:\Program Files\nodejs\
+
+Everything: Will be installed on local hard drive.
+Custom Setup:
+Node.js runtime: Install the core Node.js runtime (node.exe)
+	Event tracing (ETW): Installs support for event tracing (ETW) events generated by Node.js.
+
+corepack manager: Install corepack, the universal package manager for Node.js
+
+npm package manager: Install npm, the recommended package manager for Node.js
+
+Online documentation shortcuts: Add start menu entries that link the online documentation for Node.js and the Node.js website.
+
+Add to PATH (MUY IMPORTANTE): Add Node.js, npm and modules that were globally installed by npm to the PATH environment variable.
+	Node.js and npm: Add Node.js and npm (if installed) to the PATH environment variable.
+	npm modules: Add modules that are installed globally by npm to the PATH environment variable. This option works for the current user only; other users need to update their ...
+
+Next
+
+Tools for Native Modules
+Optionally install the tools necessary to compile native modules.
+Some npm modules need to be compiled from C/C++ when installing. If you want to be able to install such modules, some tools (Python and Visual Studio Build Tools) need to be installed.
+
+Automatically install the necessary tools. Note that this will also install Chocolatey. The script will pop-up in a new window after the installation completes. YES OR NO?
+NO. ESTO NO ES NECESARIO.
+https://stackoverflow.com/questions/71275043/what-are-tools-for-native-modules-help-a-newbie-decide-if-they-are-necessary
+https://github.com/nodejs/node/issues/30242
+https://github.com/chocolatey/choco
+
+NOTA: Se debe revisar la instalación de Python en Windows después de esto, si se dice que sí => OK
+Por lo tanto, se recomienda instalar Node.js antes de Python si se va a trabajar con ambas tecnologías, o con Angular CLI (Cuya instalación requiere de Node.js).
+
+Alternatively, follow the instructions at https://github.com/nodejs/node-gyp#on-windows to install the dependencies yourself. => Sí, es mejor hacer esto después, si se quiere.
+
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+https://github.com/nodejs/node/issues/30242
+
+"none of what Chocolatey installed is "necessary" to build apps with node."
+I had just spent hours setting up my new machine and dev env exactly how I like it, and chocolately went ahead and installed a dev env how someone else likes it, including a load of libs and tools which didnt want and will never use.
+It makes many unwarranted presumptions.
+Even if I did intentionally install Chocolatey it could ask more questions relating to what I may be using node for and how I will deploy it etc, and even what is my preferred IDE etc, rather than presume.
+
+Thank you, @ekerner-com!
+
+I maintain that the users decision whether to check or not check the box is made under lack of description and poorly chosen or misleading wording "Required Tools" giving the user the impression that they are node required tools.
+
+I think the installer is very explicit about the fact that these tools are only required for native modules: The dialog title is "Tools for Native Modules", the subtitle is "Optionally install the tools necessary to compile native modules" (making it very clear that this is optional), and then there is more text explaining what these tools are for. However, I can see this being confusing to new users who don't know what native modules are.
+
+Even if you check the box, it will not perform the installation directly, instead, it will start this script. The script asks for manual confirmation twice before continuing with the installation. First, it displays information including
+
+This script will install Python and the Visual Studio Build Tools, necessary to compile Node.js native modules. Note that Chocolatey and required Windows updates will also be installed.
+You can close this window to stop now. Detailed instructions to install these tools manually are available at https://github.com/nodejs/node-gyp#on-windows
+
+Then, after the user manually confirms that they would like to continue, it displays this:
+
+Using this script downloads third party software
+This script will direct to Chocolatey to install packages.
+
+Only after accepting this, the installation begins. At this point, the user has explicitely expressed their consent not once, not twice, but three times.
+
+To a new user, "native modules" sure as hell sound like necessary modules to use nodejs. Hence the implicit pressure to install it.
+
+There is no context or explanation as to what these "native modules" are, and whether they are necessary for 90% of users. Or whether they can be installed at a later time if needed, or must be installed now.
+
+helllo everyone...
+so how to remove it?
+thanks
+
+Its basically a virus from my view. You remove it like you remove any virus, a lot of googling and hacking on ur system. It was a headache to remove.
+
+After some digging, trial and error, I've come to the following steps to uninstall almost everything with one command:
+
+Press [Windows]+X then press the a key (this will open Windows PowerShell with Admin privileges)
+Copy the line below and paste it in to the shell and press enter
+choco uninstall kb2919355 kb2919442 kb2999226 kb3033929 kb3035131 python3 dotnetfx vcredist140 chocolatey-windowsupdate.extension chocolatey-visualstudio.extension chocolatey-dotnetfx.extension chocolatey-core.extension chocolatey -y; choco uninstall visualstudio2019-workload-vctools visualstudio2019buildtools visualstudio-installer -n -y
+Reboot your pc, now everything should've been uninstalled that was installed during the Node installation.
+There are probably small remnants left, such as Chocolatey itself and some entries might remain in the Programs and Features. That's because Chocolatey doesn't update those via the registry after any successful uninstalls.
+
+The above command might be outdated for future releases.
+For a more future proof scenario, probably use this:
+
+choco uninstall all -y; choco uninstall all -n -y
+NOTE: this is a more broad approach, and could remove stuff that was not installed via Node (for example: if the user has previously used chocolaty before).
+
+Hopefully this helps somebody.
+
+This would only remove the additional "necessary tools" that were installed and not node.js itself right?
+
+Yes, that's correct.
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+
+Install.
+
+Finish.
+
+En cmd:
+C:\Windows\system32>node -v
+v18.13.0
+
+C:\Windows\system32>npm -v
+8.1.3
+
+npm
+
+https://www.npmjs.com/
+We love open source
+At npm, Inc., we're proud to dedicate teams of full-time employees to operating the npm Registry, enhancing the CLI, improving JavaScript security, and other projects that support and nurture a vibrant open source community.
+
+https://docs.npmjs.com/
+https://www.npmjs.com/products
+
+This will update npm using npm itself:
+
+En Windows no se necesita usar sudo:
+sudo npm install npm -g
+
+C:\Windows\system32>npm install npm -g
+
+removed 192 packages, changed 20 packages, and audited 27 packages in 1m
+
+found 0 vulnerabilities
+npm notice
+npm notice New major version of npm available! 8.1.3 -> 9.3.1
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v9.3.1
+npm notice Run npm install -g npm@9.3.1 to update!
+npm notice
+
+C:\Windows\system32>
+
+C:\Windows\system32>npm install -g npm@9.3.1
+
+changed 15 packages in 12m
+
+14 packages are looking for funding
+  run `npm fund` for details
+
+C:\Windows\system32>
+
+C:\Windows\system32>npm -v
+9.3.1
+
+####################################################################
+
+Postman
+https://www.postman.com/
+
+Esta herramienta se necesita para probar la aplicación web, asegurándose que las peticiones REST funcionan.
+
+Sign In with Google.
+
+Postman Agent
+Se actualizó el agente Postman.
+
+Es necesario ingresar a un navegador (browser) para usar Postman.
+
+####################################################################
+
+Documentación relacionado con el stack tecnológico del software, así como otros lenguajes de programación y demás herramientas relevantes:
+
+https://netbeans.apache.org/help/index.html
+https://docs.oracle.com/en/java/javase/16/
+https://docs.python.org/3/
+https://dev.mysql.com/doc/
+https://github.com/dbeaver/dbeaver/wiki
+https://angular.io/docs
+https://nodejs.org/dist/latest-v18.x/docs/api/
+https://docs.npmjs.com/

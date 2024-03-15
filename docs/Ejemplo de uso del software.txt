@@ -1,0 +1,428 @@
+Ejemplo de uso del software
+---------------------------
+
+Para las pruebas del backend, se usa el software llamado Postman.
+
+0) Obtener la información en base de datos sobre los roles de usuario => OK
+---------------------------------------------------------------------
+GET localhost:8080/apalpro/resources/roles/get/all
+
+[
+    {
+        "created_at": "2023-01-23 23:58:49",
+        "description": "Estudiante",
+        "id": 1,
+        "name": "E",
+        "status": true
+    },
+    {
+        "created_at": "2023-01-23 23:58:49",
+        "description": "Profesor",
+        "id": 2,
+        "name": "P",
+        "status": true
+    },
+    {
+        "created_at": "2023-01-23 23:58:49",
+        "description": "Administrador",
+        "id": 3,
+        "name": "A",
+        "status": true
+    }
+]
+
+GET localhost:8080/apalpro/resources/roles/1/get
+
+{
+    "created_at": "2023-01-23 23:58:49",
+    "description": "Estudiante",
+    "id": 1,
+    "name": "E",
+    "status": true
+}
+
+1) Crear 1 usuario con rol de profesor => OK
+--------------------------------------
+POST localhost:8080/apalpro/resources/users/create
+
+Body: raw: Text (Postman)
+{
+    "uname":"maurelio",
+    "pwd":"123456",
+    "names":"Marco Aurelio",
+    "surnames":"Pérez Sánchez",
+    "role_id":2
+}
+
+ERROR:
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+	<title>Payara Server 6 #badassfish - Error report</title>
+	<style type="text/css">
+		<!--H1 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:22px;} H2 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:16px;} H3 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:14px;} BODY {font-family:Tahoma,Arial,sans-serif;color:black;background-color:white;} B {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;} P {font-family:Tahoma,Arial,sans-serif;background:white;color:black;font-size:12px;}A {color : black;}HR {color : #525D76;}
+		-->
+	</style>
+</head>
+
+<body>
+	<h1>HTTP Status 415 - Unsupported Media Type</h1>
+	<hr />
+	<p><b>type</b> Status report</p>
+	<p><b>message</b>Unsupported Media Type</p>
+	<p><b>description</b>The server refused this request because the request entity is in a format not supported by the
+		requested resource for the requested method.</p>
+	<hr />
+	<h3>Payara Server 6 #badassfish</h3>
+</body>
+
+</html>
+
+https://stackoverflow.com/questions/53492920/error-the-server-refused-this-request-because-the-request-entity-is-in-a-forma
+
+Body: raw: JSON (Postman)
+{
+    "uname":"maurelio",
+    "pwd":"123456",
+    "names":"Marco Aurelio",
+    "surnames":"Pérez Sánchez",
+    "role_id":2
+}
+
+ERROR:
+{
+    "id": 0,
+    "role_id": 0,
+    "status": false
+}
+
+MENSAJE DE LA APLICACIÓN WEB JAVA:
+INFO:   Hubo una excepción a nivel de SQL al tratar de registrar un nuevo usuario a la base de datos: java.sql.SQLException: No value specified for parameter 5
+INFO:   Hubo una excepción NO relacionada con SQL al tratar de obtener un usuario por su identificador (id): java.lang.NullPointerException: Cannot invoke "java.lang.Integer.intValue()" because "id" is null
+
+Después de haber corregido el error en la aplicación web (Faltaba asignar el parámetro role_id al DTO de usuario a entregar al cliente):
+
+Body: raw: JSON (Postman)
+{
+    "uname":"maurelio",
+    "pwd":"123456",
+    "names":"Marco Aurelio",
+    "surnames":"Pérez Sánchez",
+    "role_id":2
+}
+
+{
+    "created_at": "2023-01-26 22:53:50",
+    "id": 1,
+    "names": "Marco Aurelio",
+    "pwd": "123456",
+    "role_id": 2,
+    "status": true,
+    "surnames": "Pérez Sánchez",
+    "uname": "maurelio"
+}
+
+GET localhost:8080/apalpro/resources/users/1/get
+
+{
+    "created_at": "2023-01-26 22:53:50",
+    "id": 1,
+    "names": "Marco Aurelio",
+    "pwd": "123456",
+    "role_id": 2,
+    "status": true,
+    "surnames": "Pérez Sánchez",
+    "uname": "maurelio"
+}
+
+2) Crear 1 usuario con rol de estudiante => OK
+----------------------------------------
+POST localhost:8080/apalpro/resources/users/create
+
+Body: raw: JSON (Postman)
+{
+    "uname":"lniebles",
+    "pwd":"qwerty",
+    "names":"Leandro Alejandro",
+    "surnames":"Niebles Carbonó",
+    "role_id":1
+}
+
+{
+    "created_at": "2023-01-26 22:55:48",
+    "id": 2,
+    "names": "Leandro Alejandro",
+    "pwd": "qwerty",
+    "role_id": 1,
+    "status": true,
+    "surnames": "Niebles Carbonó",
+    "uname": "lniebles"
+}
+
+GET localhost:8080/apalpro/resources/users/2/get
+
+{
+    "created_at": "2023-01-26 22:55:48",
+    "id": 2,
+    "names": "Leandro Alejandro",
+    "pwd": "qwerty",
+    "role_id": 1,
+    "status": true,
+    "surnames": "Niebles Carbonó",
+    "uname": "lniebles"
+}
+
+GET localhost:8080/apalpro/resources/users/get/all
+
+[
+    {
+        "created_at": "2023-01-26 22:53:50",
+        "id": 1,
+        "names": "Marco Aurelio",
+        "pwd": "123456",
+        "role_id": 2,
+        "status": true,
+        "surnames": "Pérez Sánchez",
+        "uname": "maurelio"
+    },
+    {
+        "created_at": "2023-01-26 22:55:48",
+        "id": 2,
+        "names": "Leandro Alejandro",
+        "pwd": "qwerty",
+        "role_id": 1,
+        "status": true,
+        "surnames": "Niebles Carbonó",
+        "uname": "lniebles"
+    }
+]
+
+
+3) Crear 1 ejercicio de programación (en el lenguaje Python 3) con sus respectivos casos de prueba => OK
+--------------------------------------------------------------------------------------------------
+POST localhost:8080/apalpro/resources/exercises/create/withTestCases
+
+Body: raw: JSON (Postman)
+{
+    "name":"Suma de dos números enteros",
+    "description":"Escriba un programa que lea dos números enteros y escriba el resultado de la suma de esos dos números en pantalla.",
+    "test_cases": [
+        {
+        	"input_data": "1\n2",
+        	"expected_output": "3",
+        	"is_visible": true
+        },
+        {
+        	"input_data": "5\n-1",
+        	"expected_output": "4"
+        },
+        {
+        	"input_data": "2\n-10",
+        	"expected_output": "-8"
+        },
+        {
+        	"input_data": "5\n0",
+        	"expected_output": "5"
+        }
+    ]
+}
+
+ERROR:
+
+{
+    "id": 0,
+    "status": false
+}
+
+MENSAJE DE LA APLICACIÓN WEB JAVA:
+INFO:   Hubo un error a nivel de bases de datos al tratar de registrar un nuevo caso de prueba dentro de un ejercicio: java.sql.SQLException: No value specified for parameter 3
+INFO:   Hubo un error NO relacionado con la base de datos al tratar de registrar un nuevo ejercicio con casos de prueba: java.lang.Exception: Hubo un error a nivel de bases de datos al tratar de registrar un nuevo caso de prueba dentro de un ejercicio: java.sql.SQLException: No value specified for parameter 3
+
+Después de haber corregido el error en la aplicación web (Confundí dos veces las variables exerciseColumnNames y testCaseColumnNames, provocando un error en la operación SQL):
+
+Body: raw: JSON (Postman)
+{
+    "name":"Suma de dos números enteros",
+    "description":"Escriba un programa que lea dos números enteros y escriba el resultado de la suma de esos dos números en pantalla.",
+    "test_cases": [
+        {
+        	"input_data": "1\n2",
+        	"expected_output": "3",
+        	"is_visible": true
+        },
+        {
+        	"input_data": "5\n-1",
+        	"expected_output": "4"
+        },
+        {
+        	"input_data": "2\n-10",
+        	"expected_output": "-8"
+        },
+        {
+        	"input_data": "5\n0",
+        	"expected_output": "5"
+        }
+    ]
+}
+
+{
+    "created_at": "2023-01-26 23:18:37",
+    "description": "Escriba un programa que lea dos números enteros y escriba el resultado de la suma de esos dos números en pantalla.",
+    "id": 3,
+    "name": "Suma de dos números enteros",
+    "status": true,
+    "test_cases": [
+        {
+            "created_at": "2023-01-26 23:18:38",
+            "exercise_id": 3,
+            "expected_output": "3",
+            "id": 1,
+            "input_data": "1\n2",
+            "is_visible": true,
+            "status": true
+        },
+        {
+            "created_at": "2023-01-26 23:18:38",
+            "exercise_id": 3,
+            "expected_output": "4",
+            "id": 2,
+            "input_data": "5\n-1",
+            "is_visible": false,
+            "status": true
+        },
+        {
+            "created_at": "2023-01-26 23:18:38",
+            "exercise_id": 3,
+            "expected_output": "-8",
+            "id": 3,
+            "input_data": "2\n-10",
+            "is_visible": false,
+            "status": true
+        },
+        {
+            "created_at": "2023-01-26 23:18:38",
+            "exercise_id": 3,
+            "expected_output": "5",
+            "id": 4,
+            "input_data": "5\n0",
+            "is_visible": false,
+            "status": true
+        }
+    ]
+}
+
+GET localhost:8080/apalpro/resources/exercises/1/get/withTestCases
+
+{
+    "id": 0,
+    "status": false,
+    "test_cases": []
+}
+
+GET localhost:8080/apalpro/resources/exercises/3/get/withTestCases
+
+{
+    "created_at": "2023-01-26 23:18:37",
+    "description": "Escriba un programa que lea dos números enteros y escriba el resultado de la suma de esos dos números en pantalla.",
+    "id": 3,
+    "name": "Suma de dos números enteros",
+    "status": true,
+    "test_cases": [
+        {
+            "created_at": "2023-01-26 23:18:38",
+            "exercise_id": 3,
+            "expected_output": "3",
+            "id": 1,
+            "input_data": "1\n2",
+            "is_visible": true,
+            "status": true
+        },
+        {
+            "created_at": "2023-01-26 23:18:38",
+            "exercise_id": 3,
+            "expected_output": "4",
+            "id": 2,
+            "input_data": "5\n-1",
+            "is_visible": false,
+            "status": true
+        },
+        {
+            "created_at": "2023-01-26 23:18:38",
+            "exercise_id": 3,
+            "expected_output": "-8",
+            "id": 3,
+            "input_data": "2\n-10",
+            "is_visible": false,
+            "status": true
+        },
+        {
+            "created_at": "2023-01-26 23:18:38",
+            "exercise_id": 3,
+            "expected_output": "5",
+            "id": 4,
+            "input_data": "5\n0",
+            "is_visible": false,
+            "status": true
+        }
+    ]
+}
+
+4) Permitir a un usuario (estudiante) ver los datos de un ejercicio, según su id, sólo con los casos de prueba visibles.
+
+GET localhost:8080/apalpro/resources/exercises/3/get/withVisibleTestCases
+
+ERROR:
+
+{
+    "id": 0,
+    "status": false
+}
+
+MENSAJE DE LA APLICACIÓN WEB JAVA:
+INFO:   Hubo un error a nivel de bases de datos al tratar de obtener un ejercicio con sus casos de prueba visibles por estudiantes, según el ID del ejercicio: java.sql.SQLException: No value specified for parameter 2
+INFO:   Hubo un error NO relacionado con la base de datos al tratar de obtener un ejercicio con sus casos de prueba visibles por estudiantes, según el ID del ejercicio: java.lang.Exception: Hubo un error a nivel de bases de datos al tratar de obtener un ejercicio con sus casos de prueba visibles por estudiantes, según el ID del ejercicio: java.sql.SQLException: No value specified for parameter 2
+
+Después de haber corregido el error en la aplicación web (Omití en la consulta SQL el parámetro en donde se revisaba si el caso de prueba es visible):
+
+GET localhost:8080/apalpro/resources/exercises/3/get/withVisibleTestCases
+
+ERROR:
+
+{
+    "created_at": "2023-01-26 23:18:37",
+    "description": "Escriba un programa que lea dos números enteros y escriba el resultado de la suma de esos dos números en pantalla.",
+    "id": 3,
+    "name": "Suma de dos números enteros",
+    "status": true,
+    "test_cases": []
+}
+
+Después de haber corregido el error en la aplicación web (Confundí los nombres id y exercise_id al hacer la consulta de obtener sólo los casos de prueba de un ejercicio que son visibles a los estudiantes, provocando un error en la operación SQL):
+
+GET localhost:8080/apalpro/resources/exercises/3/get/withVisibleTestCases
+
+{
+    "created_at": "2023-01-26 23:18:37",
+    "description": "Escriba un programa que lea dos números enteros y escriba el resultado de la suma de esos dos números en pantalla.",
+    "id": 3,
+    "name": "Suma de dos números enteros",
+    "status": true,
+    "test_cases": [
+        {
+            "created_at": "2023-01-26 23:18:38",
+            "exercise_id": 3,
+            "expected_output": "3",
+            "id": 1,
+            "input_data": "1\n2",
+            "is_visible": true,
+            "status": true
+        }
+    ]
+}
+
+5) Crear (registrar) 1 propuesta de solución para un problema, que no cumpla con al menos un caso de prueba y almacenar los datos de la evaluación de la misma.
+6) Crear (registrar) 1 propuesta de solución para un problema, que sí cumpla con al menos un caso de prueba y almacenar los datos de la evaluación de la misma.
+
+<<EN DESARROLLO>>

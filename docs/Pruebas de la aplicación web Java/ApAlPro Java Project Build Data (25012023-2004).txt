@@ -1,0 +1,46 @@
+cd C:\Users\leand\Documents\NetBeansProjects\apalpro; JAVA_HOME=C:\\Users\\leand\\jdk-17 cmd /c "\"C:\\Program Files\\NetBeans-16\\netbeans\\java\\maven\\bin\\mvn.cmd\" \"-Dmaven.ext.class.path=C:\\Program Files\\NetBeans-16\\netbeans\\java\\maven-nblib\\netbeans-eventspy.jar\" -Dfile.encoding=UTF-8 clean install"
+Scanning for projects...
+
+----------------------< co.com.alprosoft:apalpro >----------------------
+Building apalpro-1.0-SNAPSHOT 1.0-SNAPSHOT
+--------------------------------[ war ]---------------------------------
+The artifact mysql:mysql-connector-java:jar:8.0.32 has been relocated to com.mysql:mysql-connector-j:jar:8.0.32: MySQL Connector/J artifacts moved to reverse-DNS compliant Maven 2+ coordinates.
+
+--- maven-clean-plugin:2.5:clean (default-clean) @ apalpro ---
+Deleting C:\Users\leand\Documents\NetBeansProjects\apalpro\target
+
+--- maven-dependency-plugin:3.3.0:copy (default) @ apalpro ---
+
+--- maven-resources-plugin:2.6:resources (default-resources) @ apalpro ---
+Using 'UTF-8' encoding to copy filtered resources.
+Copying 1 resource
+
+--- maven-compiler-plugin:3.10.1:compile (default-compile) @ apalpro ---
+Changes detected - recompiling the module!
+Compiling 29 source files to C:\Users\leand\Documents\NetBeansProjects\apalpro\target\classes
+
+--- maven-resources-plugin:2.6:testResources (default-testResources) @ apalpro ---
+Using 'UTF-8' encoding to copy filtered resources.
+skip non existing resourceDirectory C:\Users\leand\Documents\NetBeansProjects\apalpro\src\test\resources
+
+--- maven-compiler-plugin:3.10.1:testCompile (default-testCompile) @ apalpro ---
+Changes detected - recompiling the module!
+
+--- maven-surefire-plugin:2.12.4:test (default-test) @ apalpro ---
+
+--- maven-war-plugin:3.3.2:war (default-war) @ apalpro ---
+Packaging webapp
+Assembling webapp [apalpro] in [C:\Users\leand\Documents\NetBeansProjects\apalpro\target\apalpro-1.0-SNAPSHOT]
+Processing war project
+Copying webapp resources [C:\Users\leand\Documents\NetBeansProjects\apalpro\src\main\webapp]
+Building war: C:\Users\leand\Documents\NetBeansProjects\apalpro\target\apalpro-1.0-SNAPSHOT.war
+
+--- maven-install-plugin:2.4:install (default-install) @ apalpro ---
+Installing C:\Users\leand\Documents\NetBeansProjects\apalpro\target\apalpro-1.0-SNAPSHOT.war to C:\Users\leand\.m2\repository\co\com\alprosoft\apalpro\1.0-SNAPSHOT\apalpro-1.0-SNAPSHOT.war
+Installing C:\Users\leand\Documents\NetBeansProjects\apalpro\pom.xml to C:\Users\leand\.m2\repository\co\com\alprosoft\apalpro\1.0-SNAPSHOT\apalpro-1.0-SNAPSHOT.pom
+------------------------------------------------------------------------
+BUILD SUCCESS
+------------------------------------------------------------------------
+Total time:  01:07 min
+Finished at: 2023-01-25T22:03:54-05:00
+------------------------------------------------------------------------
