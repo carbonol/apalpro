@@ -2,7 +2,9 @@
 ### ApAlPro: Apoyo para evaluación y retroalimentación de propuestas de solución a ejercicios o problemas en Algoritmia y Programación
 #### Versión 1: Enero 27 de 2023
 
-Este es un proyecto que fue diseñado con el propósito de construir una aplicación web para la evaluación y retroalimentación de propuestas de solución a ejercicios de programación (Python 3) que estuviere conformado por un backend en Java, un frontend en Angular (CLI) y una base de datos relacional (MySQL). En adición, el backend fue implementado con base en un patrón MVC y patrones DAO y DTO para el modelo (i.e., el M en el MVC). Además, se usan recursos y rutas con REST para la operación de la aplicación web.
+Este es un proyecto que fue diseñado con el propósito de construir una aplicación web para la evaluación y retroalimentación de propuestas de solución a ejercicios de programación (Python 3) que estuviere conformado por un backend en Java, un frontend en Angular (CLI) y una base de datos relacional (MySQL). En adición, el backend fue implementado con base en un patrón MVC y patrones DAO y DTO para el modelo (i.e., el M en el MVC). Además, se usan recursos y rutas con REST para la operación de la aplicación web. Para lograrlo, como referencia, se planteó en un principio la siguiente propuesta:
+
+![Diagrama principal de propuesta básica de solución](https://github.com/carbonol/apalpro/blob/master/docs/Diagrama%20principal%20de%20propuesta%20de%20soluci%C3%B3n.png?raw=true "Diagrama básico de propuesta de solución")
 
 Aunque se ha implementado y probado el funcionamiento de algunas de las rutas REST de este sistema, tales como:
 1. Obtener la información de los roles de usuario (buscándolos todos, o por un ID).
@@ -35,6 +37,10 @@ Este programa fue desarrollado con el IDE de Apache Netbeans como un proyecto We
 
 1. Versión MySQL: MySQL Server 8.0.32 (Instalado con MySQL Installer Community, MySQL Community Server 8.0.32) (Anteriormente era MySQL 8.0.26)
 2. [DBeaver](https://dbeaver.io/ "DBeaver"): Asistente para crear bases de datos MySQL (entre otros):  DBeaver 22.3.3 (23.01.2023) (Anteriormente era DBeaver 21.2.3.202110151816).
+
+Como referencia, el modelo de bases de datos MySQL considerado inicialmente en el desarrollo de este sistema es el siguiente:
+
+![Base de datos apalpro (MySQL)](https://github.com/carbonol/apalpro/blob/master/docs/apalpro.png?raw=true "Base de datos apalpro (MySQL)")
 
 ### Backend: Java
 
@@ -96,6 +102,14 @@ Como mínimo, se requieren las siguientes dependencias desde Maven, las cuales d
 ## Cómo usar este proyecto
 
 Para usar y probar este proyecto, se requiere crear la base de datos e iniciar el servidor MySQL. Asegúrese de que los parámetros en la clase **DBConnection** (DBConnection.java) sean los correctos para realizar la conexión desde el backend (Java) hasta la base de datos. Luego, se debe iniciar el servidor Payara a través del IDE de Apache Netbeans, y a partir de este momento, se pueden probar las funcionalidades del sistema desarrollado en este repositorio.
+
+### Cómo crear la base de datos
+
+Si desea seguir el diseño de base de datos considerado inicialmente en este repositorio, puede guiarse de la imagen dada en la sección **Base de datos: MySQL (Con soporte adicional de DBeaver)** ubicada en este README, además de considerar los siguientes archivos del directorio **docs** como guía, los cuales también se encuentran ubicados en este repositorio:
+- **Documentación del ambiente de desarrollo.txt**
+- **Documentación del diseño y desarrollo de la base de datos.txt**
+- El directorio llamado **Scripts de base de datos (Archivos .sql)**, el cual contiene archivos .sql para la creación conveniente de la base de datos, las tablas y su inicialización.
+- Si está usando DBeaver para establecer una conexión al servidor MySQL, puede usar la información contenida en la sección **Conexión de DBeaver a la base de datos MySQL** del documento **Documentación del desarrollo del backend.txt**.
 
 ### Rutas de prueba de funcionamiento del servidor
 
@@ -176,6 +190,14 @@ Para usar y probar este proyecto, se requiere crear la base de datos e iniciar e
 1) Crear (registrar) 1 propuesta de solución para un problema, que no cumpla con al menos un caso de prueba y almacenar los datos de la evaluación de la misma.
 2) Crear (registrar) 1 propuesta de solución para un problema, que sí cumpla con al menos un caso de prueba y almacenar los datos de la evaluación de la misma.
 3) Otras operaciones CRUD no desarrolladas aún.
+
+### Ejemplo de ejercicio de programación (Python)
+
+En el documento **Ejemplo de ejercicio de programación.txt** ubicado en el directorio **docs** se puede encontrar un ejemplo de ejercicio en el contexto de Python, el cual puede tomarse como referencia para pruebas y desarrollos futuros. 
+
+## Documentación
+
+Este repositorio cuenta con un directorio llamdo [**docs**](https://github.com/carbonol/apalpro/tree/master/docs "**docs**"), en donde se pueden observar detalles de diseño, implementación, configuración y uso del sistema.
 
 ## Licencia
 
